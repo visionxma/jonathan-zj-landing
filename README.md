@@ -30,13 +30,13 @@ começar é simples → bora pra dentro? → FAQ → barra legal.
 ```
 
 O hero é servido em `hero-800/1400/2000` (`.webp` com `.jpg` de fallback), gerados a
-partir do `hero.png` original de 9,6 MB — que fica de fora do repositório via
-`.gitignore`, mas continua na sua pasta local. Para regerar depois de trocar o PNG:
+partir do `hero.jpg` original — que fica de fora do repositório via `.gitignore`,
+mas continua na sua pasta local. Para regerar depois de trocar a foto:
 
 ```bash
 cd assets/img
 for w in 800 1400 2000; do
-  sips --resampleWidth $w hero.png --setProperty format jpeg \
+  sips --resampleWidth $w hero.jpg --setProperty format jpeg \
        --setProperty formatOptions 82 --out hero-$w.jpg
   cwebp -q 80 hero-$w.jpg -o hero-$w.webp
 done
