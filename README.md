@@ -1,16 +1,24 @@
 # Landing Page — Jonathan ZJ
 
-Squeeze page de uma tela para o grupo gratuito de WhatsApp: hero de tela cheia com a
-foto ao fundo, card de perks, CTA e rodapé legal.
+Clone da estrutura da **`gidogreen.com/grupo-gg/`**, com a copy e as fotos adaptadas
+para o Jonathan. Os valores de cor, tipografia, espaçamento e raio foram extraídos do
+`post-816.css` da própria página deles, usando os overrides do breakpoint mobile
+(`max-width:767px`) — que é o que se aplica na coluna de 480px.
 
-O sistema visual vem da **`gidogreen.com/grupo-gg/`**: fundo verde quase preto
-(`#040C0D`), superfície `#114F2A`, títulos em laranja `#FF9F39`, CTA azul `#1446FF`
-com borda lima `#9FE500` e ícones de círculo laranja com glifo verde `#035128`.
-A tipografia **não** é a deles: uma família só (Archivo), usando o eixo de largura
-variável para os títulos condensados em caixa-alta.
+Seções, na ordem: hero → o que rola lá dentro → uma comunidade que já tá em campo →
+começar é simples → bora pra dentro? → FAQ → barra legal.
 
-O layout é travado numa **coluna de 480 px** (`--col`), então a página é idêntica no
-celular e no desktop — no desktop ela aparece centralizada, no formato de celular.
+| | valor do gg |
+|---|---|
+| Fundo escuro | `#0F1610` |
+| Fundo verde | `#114F2A` |
+| FAQ | `#040E08`, card em gradiente `#004E23 → #021008` |
+| Cards claros | `#F4F4F4`, título preto, descrição `#114F2A` |
+| Cards escuros | `#0A351B`, borda `#B0B4B0`, título laranja |
+| Títulos | Bebas Neue, `#FF9F39` |
+| Corpo | Inter, `#B0B4B0` |
+| Botão | `#1446FF`, Inter 18px 700 uppercase, raio 12px, `#EBEEF2` |
+| Carrossel | borda `#9FE500`, bolinhas `#FF9F39` |
 
 ## Arquivos
 

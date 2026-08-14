@@ -13,213 +13,197 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <title>Jonathan ZJ — Grupo oficial</title>
-<meta name="description" content="Entre no grupo do Jonathan ZJ. Entradas analisadas e leitura de jogo de quem viveu o futebol por dentro. Gratuito, sem cadastro.">
-<meta name="theme-color" content="#040C0D">
+<meta name="description" content="Entre no grupo do Jonathan ZJ. Entradas analisadas e a torcida toda no mesmo lugar, sem pagar nada, sem complicação.">
+<meta name="theme-color" content="#0F1610">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Jonathan ZJ — Grupo oficial">
-<meta property="og:description" content="Entradas analisadas e leitura de jogo de quem viveu o futebol por dentro. Gratuito, sem cadastro.">
+<meta property="og:description" content="Entradas analisadas e a torcida toda no mesmo lugar, sem pagar nada, sem complicação.">
 <meta property="og:image" content="assets/img/hero-1400.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..100,400..800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* =========================================================
+   Valores extraídos de gidogreen.com/grupo-gg/ (post-816.css),
+   usando os overrides do breakpoint mobile (max-width:767px),
+   que é o que se aplica na coluna de 480px.
+   ========================================================= */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  /* paleta do gidogreen /grupo-gg/ */
-  --bg:#040C0D;
-  --surface:#114F2A;
-  --green-deep:#035128;
+  --dark:#0F1610;      /* hero, comunidade, cta final, barra legal */
+  --green:#114F2A;     /* o que rola / começar é simples */
+  --faq-bg:#040E08;
+  --faq-1:#004E23;
+  --faq-2:#021008;
+  --card-light:#F4F4F4;
+  --card-dark:#0A351B;
 
-  --lime:#9FE500;
   --orange:#FF9F39;
+  --lime:#9FE500;
   --blue:#1446FF;
-  --blue-hover:#0F35CC;
+  --btn-fg:#EBEEF2;
+  --grey:#B0B4B0;
+  --grey-2:#A4A4A4;
 
-  --fg:#FFFFFF;
-  --muted:rgba(255,255,255,.68);
-  --faint:rgba(255,255,255,.44);
-  --line:rgba(159,229,0,.22);
-
-  --font:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --bebas:'Bebas Neue','Inter',sans-serif;
+  --inter:'Inter',system-ui,-apple-system,sans-serif;
   --col:480px;
 }
 
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 body{
-  background:#020706;color:var(--fg);
-  font-family:var(--font);
-  font-size:16px;line-height:1.55;overflow-x:hidden;
+  background:#05100A;color:#fff;
+  font-family:var(--inter);
+  font-size:16px;line-height:1.5;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
 svg{display:block}
 
-/* titulos usam o eixo condensado da MESMA familia */
-h1,h2,h3,.display{
-  font-weight:800;font-stretch:80%;
-  text-transform:uppercase;letter-spacing:.005em;line-height:1;
-}
-
-.wrap{width:100%;margin-inline:auto;padding-inline:20px}
-
-/* ================= CTA ================= */
-.cta-wrap{position:relative;margin-top:18px}
-.cta-wrap::after{
-  content:"";position:absolute;inset:0;border-radius:999px;pointer-events:none;
-  border:2px solid var(--lime);
-  animation:ctaPulse 2.1s ease-out infinite;
-}
-.cta{
-  position:relative;overflow:hidden;isolation:isolate;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  width:100%;min-height:62px;padding:0 24px;
-  border:2px solid var(--lime);border-radius:999px;cursor:pointer;
-  background:var(--blue);color:var(--fg);
-  font-weight:800;font-stretch:85%;font-size:19px;
-  text-transform:uppercase;letter-spacing:.05em;
-  box-shadow:0 12px 34px -8px rgba(20,70,255,.85);
-  animation:ctaBounce 2.6s ease-in-out infinite;
-  transition:background .18s,transform .12s;
-}
-.cta:hover{background:var(--blue-hover)}
-.cta:active{transform:scale(.985)}
-.cta::before{
-  content:"";position:absolute;top:0;bottom:0;left:0;width:120px;z-index:-1;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
-  animation:ctaShimmer 2.6s linear infinite;
-}
-.cta .arrow{width:18px;height:18px;color:var(--lime);animation:arrowNudge 1.4s ease-in-out infinite}
-.cta-note{display:block;text-align:center;font-size:12.5px;color:var(--faint);margin-top:11px}
-
-@keyframes ctaShimmer{0%{transform:translateX(-100%)}100%{transform:translateX(560%)}}
-@keyframes ctaPulse{0%{transform:scale(1);opacity:.65}70%{transform:scale(1.07);opacity:0}100%{opacity:0}}
-@keyframes ctaBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-@keyframes arrowNudge{0%,100%{transform:translateX(0);opacity:.75}50%{transform:translateX(4px);opacity:1}}
-@keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.anim{animation:slideUp .5s cubic-bezier(.22,1,.36,1) both}
-.anim-2{animation-delay:.08s}
-.anim-3{animation-delay:.16s}
-
-@media(prefers-reduced-motion:reduce){
-  *,*::before,*::after{animation:none!important;transition:none!important}
-}
-
-/* ================= coluna (formato celular) ================= */
 .app{
   position:relative;width:100%;max-width:var(--col);margin-inline:auto;
-  background:var(--bg);min-height:100vh;min-height:100svh;
+  background:var(--dark);
 }
-@media(min-width:520px){
-  .app{box-shadow:0 0 0 1px rgba(159,229,0,.14),0 24px 70px rgba(0,0,0,.8)}
+@media(min-width:520px){.app{box-shadow:0 24px 70px rgba(0,0,0,.8)}}
+
+/* seções: mobile do gg = padding 48px 24px, gap 32px */
+.sec{padding:48px 24px;display:flex;flex-direction:column;gap:32px}
+
+/* títulos Bebas centralizados */
+.h-sec{
+  font-family:var(--bebas);font-weight:400;line-height:1;
+  text-align:center;color:var(--orange);
 }
 
-/* ================= header ================= */
-header{
-  position:sticky;top:0;z-index:50;
-  background:transparent;border-bottom:1px solid transparent;
-  transition:background .25s,border-color .25s;
+/* ---------- botão (gg mobile: 18px, pad 16, r12, max 320) ---------- */
+.btn{
+  display:block;width:100%;max-width:320px;
+  background:var(--blue);border:1px solid var(--blue);border-radius:12px;
+  padding:16px;text-align:center;
+  font-family:var(--inter);font-size:18px;font-weight:700;text-transform:uppercase;
+  color:var(--btn-fg);cursor:pointer;transition:color .2s;
 }
-header.scrolled{
-  background:rgba(4,12,13,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom-color:var(--line);
-}
-header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:14px}
-.logo{font-weight:800;font-stretch:85%;font-size:17px;letter-spacing:.1em;text-transform:uppercase}
-.logo span{color:var(--orange)}
-.head-cta{
-  background:var(--blue);color:var(--fg);border:1.5px solid var(--lime);
-  font-size:12.5px;font-weight:700;padding:8px 16px;border-radius:999px;
-  text-transform:uppercase;letter-spacing:.04em;
-  box-shadow:0 6px 18px -6px rgba(20,70,255,.9);white-space:nowrap;
+.btn:hover{color:#000}
+.btn-note{
+  display:block;width:100%;max-width:320px;margin-top:12px;
+  text-align:center;font-size:14px;color:var(--grey);
 }
 
-/* ================= hero ================= */
+/* ================= HERO ================= */
+/* gg mobile: padding 280px 24px 60px, imagem de fundo cover */
 .hero{
-  position:relative;overflow:hidden;background:#000;
-  min-height:100vh;min-height:100svh;
-  display:flex;align-items:flex-end;
-  margin-top:-60px;padding:60px 0 clamp(24px,4vh,44px);
+  position:relative;overflow:hidden;
+  background:#000;
+  padding:280px 24px 60px;
 }
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .hero::after{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,
-    rgba(4,12,13,.62) 0%, rgba(4,12,13,.10) 18%,
-    rgba(4,12,13,.48) 44%, rgba(4,12,13,.90) 66%,
-    var(--bg) 82%, var(--bg) 100%);
+    rgba(15,22,16,.55) 0%, rgba(15,22,16,.06) 16%,
+    rgba(15,22,16,.45) 42%, rgba(15,22,16,.92) 64%,
+    var(--dark) 80%, var(--dark) 100%);
 }
-.hero > .wrap{position:relative;z-index:2;width:100%}
+.hero-in{position:relative;z-index:2;display:flex;flex-direction:column;gap:4px}
 
-.badge{
-  display:inline-flex;align-items:center;gap:8px;
-  border:1.5px solid var(--lime);background:rgba(159,229,0,.12);
-  border-radius:999px;padding:6px 14px;margin-bottom:14px;
-  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);
-}
-.live{width:7px;height:7px;border-radius:50%;background:var(--lime);animation:ctaBounce 1.6s ease-in-out infinite}
+.hero .l1{font-family:var(--inter);font-size:28px;font-weight:600;line-height:1.2;color:var(--orange)}
+.hero .l2{font-family:var(--bebas);font-weight:400;font-size:79px;line-height:.8;color:#fff;margin:10px 0 0}
+.hero .l3{font-family:var(--inter);font-size:24px;font-weight:600;line-height:1.2;color:var(--orange)}
+.hero .sub{max-width:420px;margin:32px 0 24px;font-size:16px;color:var(--grey)}
+.hero .btn{margin-top:0}
 
-.hero h1{font-size:clamp(34px,9.2vw,44px);margin-bottom:12px}
-.hero h1 .name{color:var(--orange)}
-.hero .sub{font-size:clamp(14.5px,4vw,16px);color:var(--muted)}
-.hero .sub b{color:var(--fg);font-weight:700}
+/* ================= O QUE ROLA ================= */
+.sec-green{background:var(--green)}
+.grid{display:grid;gap:24px}
 
-/* ================= card de oferta ================= */
-.offer{
-  margin-top:20px;padding:16px;border-radius:18px;
-  border:1.5px solid var(--line);background:rgba(17,79,42,.86);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
-  box-shadow:0 22px 55px -20px rgba(0,0,0,.95);
+/* card claro do gg: #F4F4F4, r16, padding 0 16 16, ícone saindo pra fora */
+.gcard{
+  background:var(--card-light);border-radius:16px;padding:0 16px 16px;
+  margin-top:40px;
 }
-.perks{display:grid;gap:8px}
-.perk{
-  display:flex;align-items:center;gap:11px;
-  border:1px solid rgba(159,229,0,.16);background:rgba(4,12,13,.5);
-  border-radius:11px;padding:10px 13px;
-  font-size:13.5px;font-weight:600;
-}
-.pico{
-  width:24px;height:24px;flex:none;border-radius:50%;
+.gcard.dark{background:var(--card-dark);border:1px solid var(--grey)}
+.gico{
+  width:50px;height:50px;padding:6px;border-radius:50%;
   background:var(--orange);display:grid;place-items:center;
+  margin-top:-40px;margin-left:-32px;
 }
-.pico svg{width:14px;height:14px;stroke:var(--green-deep);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
-
-.proof{
-  display:flex;align-items:center;justify-content:center;gap:8px;
-  margin-top:14px;font-size:12px;color:var(--faint);
+.gico svg{width:100%;height:100%;stroke:#035128;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.gcard h3{
+  font-family:var(--bebas);font-weight:400;font-size:26px;line-height:1;
+  margin:15px 0 8px;padding-bottom:8px;
+  color:#000;border-bottom:1px solid #00000050;
 }
-.proof .live{width:6px;height:6px}
-
-/* ================= footer ================= */
-footer{border-top:1px solid var(--line);padding:36px 0 100px}
-.foot-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
-.age{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
-  border:1.5px solid var(--orange);color:var(--orange);font-size:12px;font-weight:800;flex:none}
-.legal{color:var(--faint);font-size:12.5px;line-height:1.7}
-.legal + .legal{margin-top:9px}
-.foot-links{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);
-  display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12.5px;color:var(--faint)}
-.foot-links a:hover{color:var(--lime)}
-
-/* ================= barra fixa ================= */
-.sticky{
-  position:fixed;left:50%;bottom:0;z-index:60;
-  width:100%;max-width:var(--col);
-  padding:11px 18px calc(11px + env(safe-area-inset-bottom));
-  background:rgba(4,12,13,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-top:1px solid var(--line);
-  transform:translate(-50%,115%);transition:transform .3s ease;
+.gcard.dark h3{color:var(--orange);border-bottom-color:#B0B4B050}
+.gcard p{
+  font-family:var(--inter);font-size:16px;font-weight:400;color:var(--green);
+  margin-left:20px;padding:8px 12px 12px 0;
 }
-.sticky.show{transform:translate(-50%,0)}
-.sticky .cta-wrap{margin:0}
-.sticky .cta{min-height:54px;font-size:17px}
+.gcard.dark p{color:var(--grey)}
+
+/* ================= COMUNIDADE (carrossel) ================= */
+.sec-dark{background:var(--dark)}
+.carousel{
+  display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;
+  scrollbar-width:none;padding-bottom:4px;
+}
+.carousel::-webkit-scrollbar{display:none}
+.carousel figure{
+  flex:none;width:300px;scroll-snap-align:center;
+  border:1px solid var(--lime);border-radius:12px;overflow:hidden;
+}
+.carousel img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.dots{display:flex;justify-content:center;gap:8px}
+.dots button{
+  width:8px;height:8px;padding:0;border:none;border-radius:50%;
+  background:var(--orange);opacity:.35;cursor:pointer;transition:opacity .2s;
+}
+.dots button[aria-current="true"]{opacity:1}
+
+/* ================= CTA FINAL ================= */
+/* gg mobile: padding 80px 24px 48px */
+.sec-cta{background:var(--dark);padding:80px 24px 48px;display:flex;flex-direction:column;align-items:center}
+.sec-cta h2{font-family:var(--bebas);font-weight:400;font-size:64px;line-height:1;color:var(--orange);text-align:center}
+.sec-cta .sub{margin:24px 0 32px;font-size:18px;color:#fff;text-align:center}
+
+/* ================= FAQ ================= */
+/* gg mobile: seção #040E08 pad 40px 20px; card gradiente r16 pad 24 */
+.sec-faq{background:var(--faq-bg);padding:40px 20px;display:flex;flex-direction:column;gap:20px}
+.faq-card{
+  border:1px solid var(--faq-1);border-radius:16px;padding:24px;
+  background:linear-gradient(180deg,var(--faq-1) 0%,var(--faq-2) 100%);
+  display:flex;flex-direction:column;gap:24px;
+}
+.faq-card > h2{
+  font-family:var(--bebas);font-weight:400;font-size:80px;line-height:1;
+  color:var(--orange);text-align:center;
+}
+.faq-item h3{
+  font-family:var(--bebas);font-weight:400;font-size:24px;line-height:1;
+  color:#fff;margin-bottom:8px;text-transform:uppercase;
+}
+.faq-item p{font-family:var(--inter);font-size:16px;font-weight:500;color:var(--grey)}
+.faq-item + .faq-item{margin-top:20px}
+
+/* ================= BARRA LEGAL ================= */
+.legal-bar{background:var(--dark);border-top:1px solid #0000001C;padding:20px}
+.legal-bar h4{font-family:var(--inter);font-size:14px;font-weight:600;margin-bottom:8px}
+.legal-bar p{font-family:var(--inter);font-size:10px;font-weight:400;color:var(--grey-2);line-height:1.7}
+.legal-bar p + p{margin-top:6px}
+.foot-links{
+  display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;
+  font-size:10px;color:var(--grey-2);
+}
+.foot-links a:hover{color:var(--orange)}
+
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
 
@@ -232,14 +216,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <div class="app">
 
-<header>
-  <div class="wrap">
-    <a class="logo" href="#top">Jonathan <span>ZJ</span></a>
-    <a class="head-cta js-cta" data-cta="header" href="#">Entrar</a>
-  </div>
-</header>
-
-<main id="top">
+  <!-- ============ HERO ============ -->
   <section class="hero">
     <picture class="hero-bg">
       <source type="image/webp"
@@ -252,66 +229,123 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            width="1400" height="2489" fetchpriority="high">
     </picture>
 
-    <div class="wrap">
+    <div class="hero-in">
+      <p class="l1">Entre no grupo do</p>
+      <h1 class="l2">Jonathan ZJ</h1>
+      <p class="l3">de apostas grátis</p>
+      <p class="sub">Entretenimento e a torcida toda no mesmo lugar, sem pagar nada, sem complicação.</p>
+      <a class="btn js-cta" data-cta="hero" href="#">Entrar no grupo grátis</a>
+      <span class="btn-note">Sem cadastro. Sem depósito. É só entrar.</span>
+    </div>
+  </section>
+
+  <!-- ============ O QUE ROLA LÁ DENTRO ============ -->
+  <section class="sec sec-green">
+    <h2 class="h-sec" style="font-size:54px">O que rola lá dentro</h2>
+    <div class="grid">
+      <article class="gcard">
+        <div class="gico"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+        <h3>Entradas analisadas</h3>
+        <p>O Jonathan compartilha leituras e bilhetes filtrados do dia.</p>
+      </article>
+      <article class="gcard">
+        <div class="gico"><svg viewBox="0 0 24 24"><path d="m16 13 5.2-3v8L16 15"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg></div>
+        <h3>Bastidores do Jonathan</h3>
+        <p>Acompanhe de perto quem viveu o futebol por dentro.</p>
+      </article>
+      <article class="gcard">
+        <div class="gico"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.9"/><path d="M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+        <h3>Comunidade ativa</h3>
+        <p>Gente trocando ideia e vivendo cada partida junto.</p>
+      </article>
+      <article class="gcard">
+        <div class="gico"><svg viewBox="0 0 24 24"><path d="M13 2 4.1 12.7a1 1 0 0 0 .8 1.6h6L10 22l8.9-10.7a1 1 0 0 0-.8-1.6h-6Z"/></svg></div>
+        <h3>Acesso a tudo</h3>
+        <p>Fique por dentro das oportunidades que passam primeiro por aqui.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ COMUNIDADE ============ -->
+  <section class="sec sec-dark">
+    <h2 class="h-sec" style="font-size:48px">Uma comunidade que já tá em campo</h2>
+    <div class="carousel" id="carousel">
+      <figure><picture><source type="image/webp" srcset="assets/img/foto-1.webp"><img src="assets/img/foto-1.jpg" alt="Jonathan ZJ com a bola nas mãos no estádio" loading="lazy"></picture></figure>
+      <figure><picture><source type="image/webp" srcset="assets/img/foto-2.webp"><img src="assets/img/foto-2.jpg" alt="Jonathan ZJ aplaudindo a torcida" loading="lazy"></picture></figure>
+      <figure><picture><source type="image/webp" srcset="assets/img/foto-3.webp"><img src="assets/img/foto-3.jpg" alt="Jonathan ZJ finalizando de uniforme amarelo" loading="lazy"></picture></figure>
+      <figure><picture><source type="image/webp" srcset="assets/img/foto-4.webp"><img src="assets/img/foto-4.jpg" alt="Jonathan ZJ conduzindo a bola de uniforme azul" loading="lazy"></picture></figure>
+      <figure><picture><source type="image/webp" srcset="assets/img/foto-5.webp"><img src="assets/img/foto-5.jpg" alt="Jonathan ZJ de costas, com o nome em cirílico e o número 30" loading="lazy"></picture></figure>
+      <figure><picture><source type="image/webp" srcset="assets/img/foto-6.webp"><img src="assets/img/foto-6.jpg" alt="Jonathan ZJ com a bola dominada em partida oficial" loading="lazy"></picture></figure>
+    </div>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <!-- ============ COMEÇAR É SIMPLES ============ -->
+  <section class="sec sec-green">
+    <h2 class="h-sec" style="font-size:60px;color:#fff">Começar é simples</h2>
+    <div class="grid">
+      <article class="gcard dark">
+        <div class="gico"><svg viewBox="0 0 24 24"><path d="M8 13V5a2 2 0 1 1 4 0v6"/><path d="M12 11V4a2 2 0 1 1 4 0v7"/><path d="M16 11V6a2 2 0 1 1 4 0v9a7 7 0 0 1-7 7h-2a7 7 0 0 1-7-7v-2a2 2 0 1 1 4 0"/></svg></div>
+        <h3>Toque em entrar</h3>
+        <p>Você cai direto no grupo, sem formulário.</p>
+      </article>
+      <article class="gcard dark">
+        <div class="gico"><svg viewBox="0 0 24 24"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg></div>
+        <h3>Acompanhe o conteúdo</h3>
+        <p>Entradas, análises e bastidores no seu ritmo.</p>
+      </article>
+      <article class="gcard dark">
+        <div class="gico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m12 7 4.7 3.4-1.8 5.6H9.1l-1.8-5.6Z"/></svg></div>
+        <h3>Viva o jogo com a comunidade</h3>
+        <p>No seu tempo, sem pressão nenhuma.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ CTA FINAL ============ -->
+  <section class="sec-cta">
+    <h2>bora pra<br>dentro?</h2>
+    <p class="sub">A entrada é grátis e leva menos de um minuto.</p>
+    <a class="btn js-cta" data-cta="final" href="#">Entrar no grupo grátis</a>
+    <span class="btn-note">Sem cadastro. Sem depósito. É só entrar.</span>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sec-faq">
+    <div class="faq-card">
+      <h2>FAQ</h2>
       <div>
-        <span class="badge anim"><span class="live"></span> Grupo oficial · Gratuito</span>
-
-        <h1 class="anim">Entre no grupo do <span class="name">Jonathan ZJ</span></h1>
-
-        <p class="sub anim anim-2">
-          Entradas analisadas pra copiar e acompanhar.
-          <b>Leitura de quem passou 15 anos dentro do vestiário.</b>
-        </p>
-
-        <div class="offer anim anim-3">
-          <div class="perks">
-            <div class="perk">
-              <span class="pico"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.7V17c0 .6-.5 1-1 1.2C7.9 18.8 7 20.2 7 22"/><path d="M14 14.7V17c0 .6.5 1 1 1.2 1.1.6 2 2 2 3.8"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
-              <span>Entradas analisadas todos os dias</span>
-            </div>
-            <div class="perk">
-              <span class="pico"><svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.4-.5-2-1-3-1.1-2.1-.2-4 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.2.4-2.3 1-3a2.5 2.5 0 0 0 2.5 2.5Z"/></svg></span>
-              <span>Bastidores de quem jogou profissionalmente</span>
-            </div>
-            <div class="perk">
-              <span class="pico"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.7 9a1 1 0 0 1-.7 0C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.2-2.7a1.2 1.2 0 0 1 1.5 0C14.5 3.8 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg></span>
-              <span>Sem cadastro, sem depósito, sem pegadinha</span>
-            </div>
-          </div>
-
-          <div class="cta-wrap">
-            <a class="cta js-cta" data-cta="hero" href="#">
-              <span>Entrar no grupo grátis</span>
-              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-            </a>
-          </div>
-          <span class="cta-note">Sem cadastro. Sem depósito. É só entrar.</span>
-
-          <div class="proof">
-            <span class="live"></span>
-            <!-- TROQUE por um número real de membros quando tiver -->
-            <span>Grupo aberto agora, com a torcida acompanhando ao vivo</span>
-          </div>
+        <div class="faq-item">
+          <h3>É pago?</h3>
+          <p>Não. Entrar no grupo é grátis. As apostas você faz por conta, com o valor que estiver disposto a perder.</p>
+        </div>
+        <div class="faq-item">
+          <h3>As odds são garantidas?</h3>
+          <p>Não existe aposta garantida — odd alta significa maior risco. Entre só com o que pode perder.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Preciso entender de apostas?</h3>
+          <p>Não. As entradas vêm prontas e analisadas; você só copia e acompanha.</p>
+        </div>
+        <div class="faq-item">
+          <h3>O Jonathan fala no grupo?</h3>
+          <p>Sim. É o grupo oficial dele: as leituras, os bastidores e as respostas vêm dele.</p>
         </div>
       </div>
     </div>
   </section>
-</main>
 
-<footer>
-  <div class="wrap">
-    <div class="foot-head">
-      <span class="age">18+</span>
-      <span class="logo">Jonathan <span>ZJ</span></span>
-    </div>
-    <p class="legal">
-      Conteúdo destinado a maiores de 18 anos. Aposte com responsabilidade. Apostas são
-      uma forma de entretenimento e envolvem risco — aposte apenas o valor que você está
-      disposto a perder. Odds altas representam maior risco. Resultados passados não
-      garantem resultados futuros. Este conteúdo não promete ganhos ou retornos.
+  <!-- ============ BARRA LEGAL ============ -->
+  <div class="legal-bar">
+    <h4>Jonathan ZJ · Conteúdo para maiores de 18 anos</h4>
+    <p>
+      Aposte com responsabilidade. Apostas são uma forma de entretenimento e envolvem
+      risco — aposte apenas o valor que você está disposto a perder. Odds altas
+      representam maior risco. Resultados passados não garantem resultados futuros.
+      Este conteúdo não promete ganhos ou retornos.
     </p>
-    <p class="legal">Ministério da Fazenda adverte: aposta não é investimento.</p>
-    <p class="legal">
+    <p>Ministério da Fazenda adverte: aposta não é investimento.</p>
+    <p>
       Este site não é afiliado, patrocinado ou endossado pelo WhatsApp/Meta, nem por
       qualquer clube ou entidade esportiva citada.
     </p>
@@ -322,18 +356,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <span>© <span id="year">2026</span> Jonathan ZJ</span>
     </div>
   </div>
-</footer>
 
 </div><!-- /.app -->
-
-<div class="sticky" id="sticky">
-  <div class="cta-wrap">
-    <a class="cta js-cta" data-cta="barra-fixa" href="#">
-      <span>Entrar no grupo grátis</span>
-      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
-    </a>
-  </div>
-</div>
 
 <script>
 /* Link do grupo — troque aqui e vale para todos os botões */
@@ -353,15 +377,35 @@ document.querySelectorAll('.js-cta').forEach(function (el) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-var head = document.querySelector('header');
-var onScroll = function () { head.classList.toggle('scrolled', window.scrollY > 40); };
-addEventListener('scroll', onScroll, { passive: true });
-onScroll();
+/* Carrossel: bolinhas sincronizadas com o scroll */
+(function () {
+  var car = document.getElementById('carousel');
+  var dots = document.getElementById('dots');
+  var slides = car.querySelectorAll('figure');
 
-var sticky = document.getElementById('sticky');
-new IntersectionObserver(function (e) {
-  sticky.classList.toggle('show', !e[0].isIntersecting);
-}, { threshold: 0 }).observe(document.querySelector('.hero'));
+  slides.forEach(function (s, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Foto ' + (i + 1));
+    b.addEventListener('click', function () {
+      car.scrollTo({ left: s.offsetLeft - (car.clientWidth - s.clientWidth) / 2, behavior: 'smooth' });
+    });
+    dots.appendChild(b);
+  });
+
+  var marks = dots.querySelectorAll('button');
+  var sync = function () {
+    var mid = car.scrollLeft + car.clientWidth / 2;
+    var best = 0, dist = Infinity;
+    slides.forEach(function (s, i) {
+      var d = Math.abs(s.offsetLeft + s.clientWidth / 2 - mid);
+      if (d < dist) { dist = d; best = i; }
+    });
+    marks.forEach(function (m, i) { m.setAttribute('aria-current', i === best ? 'true' : 'false'); });
+  };
+  car.addEventListener('scroll', sync, { passive: true });
+  sync();
+})();
 </script>
 
 </body>
