@@ -53,12 +53,24 @@ python3 -m http.server 8901
 | Foto do hero | trocar `hero.png` e regerar (comando acima) |
 
 
-## Pixel / rastreio
+## Rastreio
 
-Os botões já disparam `fbq('track','Lead')` e `gtag('event','join_group')` **se** o pixel
-estiver na página. Para ativar, cole o script do Meta Pixel / GA4 no `<head>`.
-Se for usar o mesmo Pixel & Link Manager (Supabase) dos outros projetos, é só colar
-aquele bloco no `<head>` — não conflita com nada aqui.
+O **Google Tag Manager** (`GTM-PQGGFP2K`) já está instalado: o script no topo do
+`<head>` e o `<noscript>` logo depois do `<body>`.
+
+Todo clique em CTA empurra um evento pro `dataLayer`:
+
+```js
+{ event: 'join_group', method: 'whatsapp', cta: 'header' | 'hero' | 'barra-fixa' }
+```
+
+No GTM, crie um **acionador do tipo Evento personalizado** com o nome `join_group`.
+O campo `cta` diz qual botão converteu — use como variável da camada de dados se
+quiser separar por posição.
+
+Os cliques também disparam `fbq('track','Lead')` e `gtag('event','join_group')` **se**
+esses pixels estiverem na página. Você pode disparar os dois pelo próprio GTM em vez
+de colar as tags no HTML.
 
 ## Pontos que dependem de você
 
