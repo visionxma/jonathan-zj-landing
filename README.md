@@ -8,9 +8,12 @@ Landing de captação para o grupo gratuito de WhatsApp, com a mesma estrutura d
 ```
 .
 ├── index.html              ← página inteira (HTML + CSS + JS embutidos)
-├── assets/img/             ← as 14 fotos, renomeadas
+├── assets/img/             ← 2 fotos: o retrato do hero e a foto de jogo
 └── README.md
 ```
+
+As outras 12 fotos originais continuam na pasta do projeto (fora do repositório),
+caso queira trocar alguma.
 
 Não há build, dependência nem framework. É só subir esta pasta em qualquer
 hospedagem estática (GitHub Pages, Hostinger, Vercel, Netlify, cPanel, S3…).
@@ -32,7 +35,7 @@ python3 -m http.server 8901
 | Cores | bloco `:root` no `<style>` (`--lime`, `--gold`, `--wa`, `--bg`) |
 | Texto de qualquer seção | direto no HTML, tudo em português e comentado por seção |
 | Fotos | trocar os arquivos em `assets/img/` mantendo os nomes |
-| Bio / clubes | seção `<!-- QUEM É -->` e a faixa `<!-- FAIXA -->` |
+| Bio / clubes / números | seção `<!-- CREDENCIAL -->` |
 
 ## Pixel / rastreio
 
