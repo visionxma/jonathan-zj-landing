@@ -11,7 +11,7 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:title" content="Jonathan ZJ — Grupo oficial">
 <meta property="og:description" content="Entradas analisadas e leitura de jogo de quem viveu o futebol por dentro. Gratuito, sem cadastro.">
-<meta property="og:image" content="assets/img/jonathan-retrato-lviv.jpg">
+<meta property="og:image" content="assets/img/hero-1400.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,8 +68,12 @@ h1,h2,h3{font-weight:700;letter-spacing:-.028em;line-height:1.06}
 /* ---------- header ---------- */
 header{
   position:sticky;top:0;z-index:50;
+  background:transparent;border-bottom:1px solid transparent;
+  transition:background .25s,border-color .25s;
+}
+header.scrolled{
   background:rgba(11,15,12,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--line);
+  border-bottom-color:var(--line);
 }
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
 .logo{font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
@@ -78,18 +82,34 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .header-link:hover{color:var(--text)}
 
 /* ---------- hero ---------- */
-.hero{padding:clamp(48px,7vw,92px) 0 clamp(52px,7vw,88px)}
-.hero-grid{display:grid;gap:clamp(36px,5vw,64px);grid-template-columns:1fr;align-items:center}
-@media(min-width:900px){.hero-grid{grid-template-columns:1.05fr .95fr}}
+.hero{
+  position:relative;overflow:hidden;background:#000;
+  min-height:calc(100vh - 60px);
+  min-height:calc(100svh - 60px);
+  display:flex;align-items:flex-end;
+  padding-bottom:clamp(40px,6vh,68px);
+  margin-top:-60px;padding-top:60px;
+}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,
+    rgba(0,0,0,.55) 0%,
+    rgba(0,0,0,.10) 20%,
+    rgba(0,0,0,.45) 52%,
+    rgba(0,0,0,.88) 76%,
+    #000 90%,
+    var(--bg) 100%);
+}
+.hero > .wrap{position:relative;z-index:2;width:100%}
 
-.hero h1{font-size:clamp(38px,6.2vw,60px);margin:18px 0 20px}
-.hero p{font-size:clamp(16.5px,1.9vw,18.5px);color:var(--muted);max-width:44ch}
+.hero h1{font-size:clamp(38px,6.2vw,60px);margin:18px 0 20px;max-width:15ch}
+.hero p{font-size:clamp(16.5px,1.9vw,18.5px);color:#B9C2BC;max-width:44ch}
 .hero .cta{margin-top:32px}
 
 .figure{position:relative;overflow:hidden;border-radius:8px;background:var(--bg-2);border:1px solid var(--line)}
 .figure img{width:100%;height:100%;object-fit:cover}
-.hero .figure{aspect-ratio:4/5;max-width:440px;justify-self:center;width:100%}
-.hero .figure img{object-position:center 16%}
 
 /* ---------- números ---------- */
 .facts{display:flex;flex-wrap:wrap;gap:36px;padding:26px 0}
@@ -180,7 +200,18 @@ footer{border-top:1px solid var(--line);padding:44px 0 100px}
 
   <!-- ============ HERO ============ -->
   <section class="hero">
-    <div class="wrap hero-grid">
+    <picture class="hero-bg">
+      <source type="image/webp"
+              srcset="assets/img/hero-800.webp 800w, assets/img/hero-1400.webp 1400w, assets/img/hero-2000.webp 2000w"
+              sizes="100vw">
+      <img src="assets/img/hero-1400.jpg"
+           srcset="assets/img/hero-800.jpg 800w, assets/img/hero-1400.jpg 1400w, assets/img/hero-2000.jpg 2000w"
+           sizes="100vw"
+           alt="Jonathan ZJ uniformizado no gramado do estádio"
+           width="1400" height="2489" fetchpriority="high">
+    </picture>
+
+    <div class="wrap">
       <div>
         <span class="label">Grupo oficial · Gratuito</span>
         <h1>Entre no grupo do Jonathan ZJ</h1>
@@ -196,12 +227,6 @@ footer{border-top:1px solid var(--line);padding:44px 0 100px}
           <span class="btn-note">Gratuito. Sem cadastro, sem depósito.</span>
         </div>
       </div>
-
-      <figure class="figure">
-        <img src="assets/img/jonathan-retrato-lviv.jpg"
-             alt="Jonathan ZJ uniformizado, com a bola nas mãos, no estádio"
-             width="1265" height="1600" fetchpriority="high">
-      </figure>
     </div>
   </section>
 
@@ -343,6 +368,12 @@ document.querySelectorAll('.js-cta').forEach(function (el) {
 });
 
 document.getElementById('year').textContent = new Date().getFullYear();
+
+/* Header ganha fundo depois que sai do topo */
+var head = document.querySelector('header');
+var onScroll = function () { head.classList.toggle('scrolled', window.scrollY > 40); };
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
 
 var sticky = document.getElementById('sticky');
 new IntersectionObserver(function (e) {

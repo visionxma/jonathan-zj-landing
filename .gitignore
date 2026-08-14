@@ -1,2 +1,5 @@
 .DS_Store
 Thumbs.db
+
+# fonte pesada do hero (9,6 MB) — as versoes servidas sao hero-*.jpg/webp
+assets/img/hero.png

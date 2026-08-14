@@ -8,12 +8,24 @@ Landing de captação para o grupo gratuito de WhatsApp, com a mesma estrutura d
 ```
 .
 ├── index.html              ← página inteira (HTML + CSS + JS embutidos)
-├── assets/img/             ← 2 fotos: o retrato do hero e a foto de jogo
+├── assets/img/             ← hero (3 tamanhos, jpg + webp) e a foto de jogo
 └── README.md
 ```
 
-As outras 12 fotos originais continuam na pasta do projeto (fora do repositório),
-caso queira trocar alguma.
+O hero é servido em `hero-800/1400/2000` (`.webp` com `.jpg` de fallback), gerados a
+partir do `hero.png` original de 9,6 MB — que fica de fora do repositório via
+`.gitignore`, mas continua na sua pasta local. Para regerar depois de trocar o PNG:
+
+```bash
+cd assets/img
+for w in 800 1400 2000; do
+  sips --resampleWidth $w hero.png --setProperty format jpeg \
+       --setProperty formatOptions 82 --out hero-$w.jpg
+  cwebp -q 80 hero-$w.jpg -o hero-$w.webp
+done
+```
+
+As outras 13 fotos originais continuam na pasta do projeto, caso queira trocar alguma.
 
 Não há build, dependência nem framework. É só subir esta pasta em qualquer
 hospedagem estática (GitHub Pages, Hostinger, Vercel, Netlify, cPanel, S3…).
