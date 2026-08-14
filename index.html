@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Grupo Jonathan ZJ — Entre grátis no grupo do jogador</title>
+<meta name="description" content="Entre de graça no grupo de apostas do Jonathan ZJ. Entradas analisadas, bastidores de quem jogou no Brasil, na Ucrânia e no Catar, e a torcida toda no mesmo lugar.">
+<meta name="theme-color" content="#07130D">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / WhatsApp -->
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="Jonathan ZJ">
+<meta property="og:title" content="Entre no grupo do Jonathan ZJ — grátis">
+<meta property="og:description" content="Entradas analisadas, bastidores e a torcida toda no mesmo lugar. Sem cadastro. Sem depósito. É só entrar.">
+<meta property="og:image" content="assets/img/jonathan-retrato-lviv.jpg">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   JONATHAN ZJ — Landing "Grupo Grátis"
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --bg:#07130D;
+  --bg-2:#0B1F14;
+  --bg-3:#0E2A1B;
+  --card:rgba(255,255,255,.035);
+  --line:rgba(255,255,255,.10);
+  --line-strong:rgba(159,229,0,.35);
+
+  --lime:#9FE500;
+  --lime-dark:#7CB800;
+  --gold:#FFB020;
+  --wa:#25D366;
+  --wa-hover:#1FB855;
+
+  --text:#FFFFFF;
+  --muted:rgba(255,255,255,.62);
+  --faint:rgba(255,255,255,.38);
+
+  --radius:16px;
+  --radius-lg:24px;
+  --max:1160px;
+  --pill:999px;
+}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Barlow',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:17px;
+  line-height:1.55;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+h1,h2,h3,.bebas{
+  font-family:'Bebas Neue','Barlow',sans-serif;
+  font-weight:400;
+  letter-spacing:.02em;
+  line-height:.95;
+  text-transform:uppercase;
+}
+
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:20px}
+.section{padding:clamp(56px,9vw,110px) 0;position:relative}
+
+/* -------- textura de gramado / linhas de campo -------- */
+.pitch-lines{
+  position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:repeating-linear-gradient(90deg,rgba(255,255,255,.022) 0 2px,transparent 2px 96px);
+  mask-image:linear-gradient(180deg,transparent,#000 25%,#000 75%,transparent);
+  -webkit-mask-image:linear-gradient(180deg,transparent,#000 25%,#000 75%,transparent);
+}
+
+/* ============================ TOPBAR ============================ */
+.topbar{
+  position:sticky;top:0;z-index:60;
+  background:rgba(7,19,13,.78);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.06);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:62px;gap:16px}
+.brand{display:flex;align-items:center;gap:10px}
+.brand-mark{
+  width:34px;height:34px;border-radius:9px;flex:none;
+  background:linear-gradient(145deg,var(--lime),var(--lime-dark));
+  color:#07130D;font-family:'Bebas Neue',sans-serif;font-size:17px;
+  display:grid;place-items:center;letter-spacing:.5px;
+}
+.brand-name{font-family:'Bebas Neue',sans-serif;font-size:21px;letter-spacing:1.6px}
+.brand-name em{font-style:normal;color:var(--lime)}
+.topbar-cta{
+  display:none;background:var(--wa);color:#04140A;
+  font-weight:700;font-size:14px;padding:10px 18px;border-radius:var(--pill);
+  transition:background .2s,transform .15s;white-space:nowrap;
+}
+.topbar-cta:hover{background:var(--wa-hover);transform:translateY(-1px)}
+@media(min-width:640px){.topbar-cta{display:inline-block}}
+
+/* ============================ HERO ============================ */
+.hero{
+  position:relative;overflow:hidden;
+  padding:clamp(44px,7vw,80px) 0 clamp(56px,8vw,96px);
+  background:
+    radial-gradient(900px 520px at 78% 12%,rgba(159,229,0,.13),transparent 62%),
+    radial-gradient(700px 420px at 8% 90%,rgba(37,211,102,.10),transparent 60%),
+    linear-gradient(180deg,#08160F,#07130D 62%);
+}
+.hero-grid{
+  display:grid;gap:clamp(32px,5vw,56px);align-items:center;
+  grid-template-columns:1fr;
+}
+@media(min-width:940px){.hero-grid{grid-template-columns:1.08fr .92fr}}
+
+.badge{
+  display:inline-flex;align-items:center;gap:9px;
+  border:1px solid var(--line-strong);
+  background:rgba(159,229,0,.08);
+  color:var(--lime);
+  font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:8px 15px;border-radius:var(--pill);margin-bottom:22px;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 0 rgba(159,229,0,.6);animation:pulse 2s infinite}
+@keyframes pulse{
+  70%{box-shadow:0 0 0 9px rgba(159,229,0,0)}
+  100%{box-shadow:0 0 0 0 rgba(159,229,0,0)}
+}
+
+.hero h1{
+  font-size:clamp(46px,10.5vw,88px);
+  letter-spacing:.005em;
+  margin-bottom:20px;
+}
+.hero h1 .hl{
+  color:var(--lime);
+  display:inline-block;
+}
+.hero h1 .sm{display:block;font-size:.52em;color:var(--muted);letter-spacing:.06em;margin-bottom:6px}
+
+.hero p.lead{
+  font-size:clamp(17px,2.2vw,20px);
+  color:var(--muted);max-width:46ch;margin-bottom:30px;
+}
+
+.cta-row{display:flex;flex-direction:column;gap:12px;align-items:flex-start}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:11px;
+  background:var(--wa);color:#04140A;
+  font-family:'Bebas Neue',sans-serif;font-size:26px;letter-spacing:2.2px;
+  padding:17px 34px;border:none;border-radius:var(--pill);cursor:pointer;
+  box-shadow:0 10px 34px rgba(37,211,102,.30);
+  transition:background .2s,transform .15s,box-shadow .2s;
+  width:100%;max-width:400px;
+}
+.btn:hover{background:var(--wa-hover);transform:translateY(-2px);box-shadow:0 16px 42px rgba(37,211,102,.42)}
+.btn:active{transform:translateY(0)}
+.btn svg{width:24px;height:24px;flex:none}
+.btn-note{font-size:14px;color:var(--faint);letter-spacing:.2px}
+
+.hero-stats{
+  display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:34px;
+  padding-top:26px;border-top:1px solid var(--line);
+}
+.stat b{
+  display:block;font-family:'Bebas Neue',sans-serif;font-size:32px;
+  color:var(--gold);line-height:1;letter-spacing:1px;
+}
+.stat span{font-size:12.5px;color:var(--faint);text-transform:uppercase;letter-spacing:1.6px}
+
+/* foto do hero */
+.hero-photo{position:relative;justify-self:center;width:100%;max-width:460px}
+.hero-photo .frame{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  aspect-ratio:4/5;
+  border:1px solid var(--line);
+  box-shadow:0 34px 90px rgba(0,0,0,.6);
+}
+.hero-photo .frame::after{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,transparent 45%,rgba(7,19,13,.85));
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center 18%}
+.hero-photo .tag{
+  position:absolute;left:18px;bottom:18px;z-index:2;
+}
+.hero-photo .tag b{
+  display:block;font-family:'Bebas Neue',sans-serif;font-size:30px;letter-spacing:2px;
+}
+.hero-photo .tag span{font-size:12.5px;color:var(--lime);letter-spacing:2px;text-transform:uppercase;font-weight:700}
+.hero-photo .num{
+  position:absolute;top:-14px;right:-8px;z-index:3;
+  font-family:'Bebas Neue',sans-serif;font-size:96px;line-height:.8;
+  color:transparent;-webkit-text-stroke:2px rgba(159,229,0,.55);
+  pointer-events:none;
+}
+
+/* ============================ FAIXA CLUBES ============================ */
+.strip{
+  background:var(--bg-2);border-block:1px solid var(--line);
+  padding:16px 0;overflow:hidden;
+}
+.strip-track{
+  display:flex;gap:44px;white-space:nowrap;width:max-content;
+  animation:slide 26s linear infinite;
+}
+.strip-track span{
+  font-family:'Bebas Neue',sans-serif;font-size:19px;letter-spacing:3px;
+  color:rgba(255,255,255,.30);display:flex;align-items:center;gap:44px;
+}
+.strip-track span::after{content:"";width:5px;height:5px;border-radius:50%;background:var(--lime);opacity:.55}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.strip-track{animation:none}}
+
+/* ============================ SECTION HEAD ============================ */
+.head{max-width:660px;margin-bottom:clamp(34px,5vw,54px)}
+.head.center{margin-inline:auto;text-align:center}
+.eyebrow{
+  font-size:12px;font-weight:800;letter-spacing:2.6px;text-transform:uppercase;
+  color:var(--lime);margin-bottom:14px;display:block;
+}
+.head h2{font-size:clamp(34px,6.4vw,60px);margin-bottom:14px}
+.head h2 .hl{color:var(--lime)}
+.head p{color:var(--muted);font-size:17.5px}
+
+/* ============================ QUEM É ============================ */
+.who{background:linear-gradient(180deg,#07130D,#0A1B12)}
+.who-grid{display:grid;gap:clamp(28px,4vw,52px);grid-template-columns:1fr;align-items:center}
+@media(min-width:900px){.who-grid{grid-template-columns:.85fr 1.15fr}}
+.who-photos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.who-photos figure{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:#0B1F14}
+.who-photos img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4}
+.who-photos figure:first-child{grid-row:span 2}
+.who-photos figure:first-child img{aspect-ratio:3/5.2}
+.who ul{list-style:none;display:grid;gap:14px;margin-top:24px}
+.who li{display:flex;gap:13px;align-items:flex-start;color:var(--muted);font-size:16.5px}
+.who li::before{
+  content:"";width:9px;height:9px;border-radius:50%;flex:none;margin-top:9px;
+  background:var(--lime);box-shadow:0 0 0 4px rgba(159,229,0,.14);
+}
+.who li b{color:var(--text);font-weight:700}
+
+/* ============================ CARDS ============================ */
+.cards{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:620px){.cards{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.cards{grid-template-columns:repeat(4,1fr)}}
+.card{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:var(--radius);padding:26px 22px 28px;
+  transition:border-color .25s,transform .25s,background .25s;
+  position:relative;overflow:hidden;
+}
+.card:hover{border-color:var(--line-strong);transform:translateY(-4px);background:rgba(159,229,0,.05)}
+.card .ico{
+  width:46px;height:46px;border-radius:12px;display:grid;place-items:center;
+  background:rgba(159,229,0,.12);border:1px solid rgba(159,229,0,.25);
+  margin-bottom:18px;font-size:22px;
+}
+.card h3{font-size:24px;letter-spacing:1px;margin-bottom:9px}
+.card p{color:var(--muted);font-size:15.5px;line-height:1.5}
+
+/* ============================ GALERIA ============================ */
+.gallery{background:var(--bg-2);border-block:1px solid var(--line)}
+.marquee{overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee-track{display:flex;gap:14px;width:max-content;animation:slide 46s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.marquee-track{animation:none}.marquee{overflow-x:auto}}
+.shot{
+  width:clamp(200px,42vw,268px);flex:none;border-radius:14px;overflow:hidden;
+  border:1px solid var(--line);position:relative;background:#0B1F14;
+}
+.shot img{width:100%;height:100%;object-fit:cover;aspect-ratio:3/4;transition:transform .5s}
+.shot:hover img{transform:scale(1.05)}
+
+/* ============================ PASSOS ============================ */
+.steps{display:grid;gap:16px;grid-template-columns:1fr;counter-reset:s}
+@media(min-width:860px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{
+  border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 24px;background:var(--card);position:relative;counter-increment:s;
+}
+.step::before{
+  content:"0" counter(s);
+  font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:1;
+  color:transparent;-webkit-text-stroke:1.6px rgba(159,229,0,.5);
+  display:block;margin-bottom:14px;
+}
+.step h3{font-size:25px;letter-spacing:1px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15.5px}
+
+/* ============================ CTA FINAL ============================ */
+.final{
+  position:relative;overflow:hidden;text-align:center;
+  background:
+    radial-gradient(760px 420px at 50% 0%,rgba(159,229,0,.16),transparent 65%),
+    linear-gradient(180deg,#0A1B12,#07130D);
+}
+.final .wrap{position:relative;z-index:2}
+.final h2{font-size:clamp(42px,9.5vw,86px);margin-bottom:16px}
+.final h2 .hl{color:var(--lime)}
+.final p{color:var(--muted);font-size:18px;margin-bottom:30px}
+.final .cta-row{align-items:center}
+.final .btn{margin-inline:auto}
+
+/* ============================ FAQ ============================ */
+.faq-list{display:grid;gap:12px;max-width:800px;margin-inline:auto}
+details{
+  background:var(--card);border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;transition:border-color .25s,background .25s;
+}
+details[open]{border-color:var(--line-strong);background:rgba(159,229,0,.045)}
+summary{
+  list-style:none;cursor:pointer;padding:20px 54px 20px 22px;position:relative;
+  font-family:'Bebas Neue',sans-serif;font-size:22px;letter-spacing:1.3px;
+  text-transform:uppercase;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);
+  font-size:26px;color:var(--lime);line-height:1;transition:transform .25s;
+}
+details[open] summary::after{content:"–";transform:translateY(-50%)}
+details .body{padding:0 22px 22px;color:var(--muted);font-size:16px;max-width:68ch}
+
+/* ============================ FOOTER ============================ */
+footer{background:#050D09;border-top:1px solid var(--line);padding:48px 0 120px}
+@media(min-width:760px){footer{padding-bottom:48px}}
+.foot-top{display:flex;flex-wrap:wrap;gap:20px;align-items:center;justify-content:space-between;margin-bottom:28px}
+.age{
+  display:inline-grid;place-items:center;width:46px;height:46px;border-radius:50%;
+  border:2px solid var(--gold);color:var(--gold);
+  font-family:'Bebas Neue',sans-serif;font-size:17px;letter-spacing:.5px;flex:none;
+}
+.legal{color:var(--faint);font-size:13.5px;line-height:1.65;max-width:78ch}
+.legal strong{color:rgba(255,255,255,.72)}
+.foot-links{margin-top:22px;padding-top:22px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13.5px;color:var(--faint)}
+.foot-links a:hover{color:var(--lime)}
+.sep{opacity:.35}
+
+/* ============================ BARRA FIXA MOBILE ============================ */
+.sticky-cta{
+  position:fixed;left:0;right:0;bottom:0;z-index:80;
+  padding:12px 16px calc(12px + env(safe-area-inset-bottom));
+  background:rgba(7,19,13,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  border-top:1px solid var(--line);
+  transform:translateY(110%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta .btn{font-size:23px;padding:14px 24px;max-width:none}
+@media(min-width:760px){.sticky-cta{display:none}}
+
+/* ============================ REVEAL ============================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.3,1)}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+
+<body>
+
+<!-- ======================= TOPBAR ======================= -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Jonathan ZJ">
+      <span class="brand-mark">ZJ</span>
+      <span class="brand-name">Jonathan<em> ZJ</em></span>
+    </a>
+    <a class="topbar-cta js-cta" href="#" rel="noopener">Entrar no grupo grátis</a>
+  </div>
+</header>
+
+<!-- ======================= HERO ======================= -->
+<main id="top">
+<section class="hero">
+  <div class="pitch-lines"></div>
+  <div class="wrap hero-grid">
+
+    <div class="hero-copy">
+      <span class="badge"><span class="dot"></span> Grupo oficial · 100% grátis</span>
+
+      <h1>
+        <span class="sm">Entre no grupo de apostas do</span>
+        <span class="hl">Jonathan ZJ</span>
+      </h1>
+
+      <p class="lead">
+        Quem viveu o futebol por dentro — Brasil, Ucrânia e Catar — agora divide as
+        entradas do dia com a torcida. Entretenimento e comunidade no mesmo lugar,
+        sem pagar nada e sem complicação.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn js-cta" href="#" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.82-9.8 2.62 0 5.08 1.03 6.93 2.88a9.74 9.74 0 0 1 2.87 6.93c0 5.4-4.4 9.8-9.8 9.8M20.5 3.5A11.86 11.86 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.16 1.6 5.98L0 24l6.22-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.94-5.36 11.95-11.95a11.87 11.87 0 0 0-3.5-8.46"/></svg>
+          Entrar no grupo grátis
+        </a>
+        <span class="btn-note">Sem cadastro. Sem depósito. É só entrar.</span>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat"><b>+15</b><span>anos de carreira</span></div>
+        <div class="stat"><b>04</b><span>países</span></div>
+        <div class="stat"><b>30</b><span>a camisa de sempre</span></div>
+      </div>
+    </div>
+
+    <div class="hero-photo reveal">
+      <span class="num">30</span>
+      <div class="frame">
+        <img src="assets/img/jonathan-retrato-lviv.jpg"
+             alt="Jonathan ZJ com a bola nas mãos, uniformizado, dentro do estádio"
+             width="1265" height="1600" fetchpriority="high">
+        <div class="tag">
+          <span>Zagueiro · Volante</span>
+          <b>Jonathan ZJ</b>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ======================= FAIXA ======================= -->
+<div class="strip" aria-label="Clubes e países pelos quais passou">
+  <div class="strip-track">
+    <span>Internacional</span><span>Criciúma</span><span>FC Lviv</span><span>Metalist</span><span>Ucrânia</span><span>Catar</span><span>Brasil</span>
+    <span>Internacional</span><span>Criciúma</span><span>FC Lviv</span><span>Metalist</span><span>Ucrânia</span><span>Catar</span><span>Brasil</span>
+  </div>
+</div>
+
+<!-- ======================= QUEM É ======================= -->
+<section class="section who">
+  <div class="wrap who-grid">
+    <div class="who-photos reveal">
+      <figure><img src="assets/img/jonathan-retrato-amarelo.jpg" alt="Jonathan ZJ de uniforme amarelo com a camisa 30" loading="lazy"></figure>
+      <figure><img src="assets/img/jonathan-lviv-dynamo.jpg" alt="Jonathan ZJ de costas, com o nome em cirílico e o número 30" loading="lazy"></figure>
+      <figure><img src="assets/img/jonathan-torcida-lviv.jpg" alt="Jonathan ZJ aplaudindo a torcida no estádio" loading="lazy"></figure>
+    </div>
+
+    <div class="reveal">
+      <span class="eyebrow">Quem tá do outro lado</span>
+      <h2 style="font-size:clamp(32px,5.6vw,54px);margin-bottom:16px">
+        Não é palpiteiro.<br><span style="color:var(--lime)">É quem jogou.</span>
+      </h2>
+      <p style="color:var(--muted)">
+        Jonathan passou a vida dentro do vestiário: começou no Brasil, rodou o futebol
+        europeu na Ucrânia e fechou ciclo no Catar. A leitura que ele traz pro grupo
+        vem de quem estudou adversário na véspera de jogo — não de quem só olha tabela.
+      </p>
+      <ul>
+        <li><b>Brasil.</b> Base e profissional em clubes da Série A e B.</li>
+        <li><b>Ucrânia.</b> Campeonato nacional, jogos contra os grandes do país.</li>
+        <li><b>Catar.</b> Futebol asiático, com a camisa 30 nas costas.</li>
+        <li><b>Agora.</b> Dividindo leitura de jogo com a torcida, de graça, no WhatsApp.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= O QUE ROLA ======================= -->
+<section class="section">
+  <div class="pitch-lines"></div>
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Dentro do grupo</span>
+      <h2>O que rola <span class="hl">lá dentro</span></h2>
+      <p>Conteúdo todo dia, no seu ritmo, sem precisar responder nada.</p>
+    </div>
+
+    <div class="cards">
+      <article class="card reveal">
+        <div class="ico">🎯</div>
+        <h3>Entradas analisadas</h3>
+        <p>Leituras e bilhetes filtrados do dia, com o porquê de cada escolha — não só o print.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico">🎥</div>
+        <h3>Bastidores do Jonathan</h3>
+        <p>Vestiário, treino e os detalhes que só quem esteve lá dentro consegue contar.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico">🔥</div>
+        <h3>Comunidade ativa</h3>
+        <p>Gente trocando ideia o dia inteiro e vivendo cada partida junto, em tempo real.</p>
+      </article>
+      <article class="card reveal">
+        <div class="ico">⚡</div>
+        <h3>Acesso a tudo</h3>
+        <p>Lives, enquetes e as oportunidades do ecossistema passam primeiro por aqui.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= GALERIA ======================= -->
+<section class="section gallery">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">A torcida</span>
+      <h2>Uma comunidade que <span class="hl">já tá em campo</span></h2>
+      <p>Da base ao futebol internacional — e agora com você no grupo.</p>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <figure class="shot"><img src="assets/img/jonathan-chute-gol.jpg" alt="Jonathan ZJ finalizando com a perna direita" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-metalist-azul.jpg" alt="Jonathan ZJ conduzindo a bola de uniforme azul" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-criciuma-inter.jpg" alt="Jonathan ZJ disputando bola em partida no Brasil" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-treino-qfa.jpg" alt="Jonathan ZJ em treino com colete roxo" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-lviv-branco.jpg" alt="Jonathan ZJ caminhando no gramado com uniforme branco" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-chute-amarelo.jpg" alt="Jonathan ZJ chutando a bola de uniforme amarelo" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-internacional-treino.jpg" alt="Jonathan ZJ em treino com os companheiros de equipe" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-treino-qatar.jpg" alt="Jonathan ZJ em aquecimento no estádio" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-jogo-amarelo.jpg" alt="Jonathan ZJ com a bola dominada em partida oficial" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/img/jonathan-treino-roxo.jpg" alt="Jonathan ZJ conduzindo a bola em treinamento" loading="lazy"></figure>
+
+      <!-- duplicata para o loop contínuo -->
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-chute-gol.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-metalist-azul.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-criciuma-inter.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-treino-qfa.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-lviv-branco.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-chute-amarelo.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-internacional-treino.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-treino-qatar.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-jogo-amarelo.jpg" alt="" loading="lazy"></figure>
+      <figure class="shot" aria-hidden="true"><img src="assets/img/jonathan-treino-roxo.jpg" alt="" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= PASSOS ======================= -->
+<section class="section">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Como funciona</span>
+      <h2>Começar é <span class="hl">simples</span></h2>
+      <p>Menos de um minuto entre o toque e o primeiro conteúdo.</p>
+    </div>
+
+    <div class="steps">
+      <article class="step reveal">
+        <h3>Toque em entrar</h3>
+        <p>Você cai direto no grupo do WhatsApp. Sem formulário, sem cadastro, sem pagar nada.</p>
+      </article>
+      <article class="step reveal">
+        <h3>Acompanhe o conteúdo</h3>
+        <p>Entradas, análises e bastidores chegam no seu celular. Você lê quando der.</p>
+      </article>
+      <article class="step reveal">
+        <h3>Viva o jogo com a torcida</h3>
+        <p>Comenta, pergunta ou só observa. No seu tempo, sem pressão nenhuma.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CTA FINAL ======================= -->
+<section class="section final">
+  <div class="wrap reveal">
+    <h2>bora pra <span class="hl">dentro?</span></h2>
+    <p>A entrada é grátis e leva menos de um minuto.</p>
+    <div class="cta-row">
+      <a class="btn js-cta" href="#" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.82-9.8 2.62 0 5.08 1.03 6.93 2.88a9.74 9.74 0 0 1 2.87 6.93c0 5.4-4.4 9.8-9.8 9.8M20.5 3.5A11.86 11.86 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.16 1.6 5.98L0 24l6.22-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.94-5.36 11.95-11.95a11.87 11.87 0 0 0-3.5-8.46"/></svg>
+        Entrar no grupo grátis
+      </a>
+      <span class="btn-note">Sem cadastro. Sem depósito. É só entrar.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= FAQ ======================= -->
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Dúvidas</span>
+      <h2>FAQ</h2>
+    </div>
+
+    <div class="faq-list">
+      <details class="reveal">
+        <summary>É pago?</summary>
+        <div class="body">Não. Entrar no grupo é grátis. As apostas você faz por conta, com o valor que estiver disposto a perder.</div>
+      </details>
+      <details class="reveal">
+        <summary>As odds são garantidas?</summary>
+        <div class="body">Não existe aposta garantida — odd alta significa maior risco. Entre só com o que pode perder.</div>
+      </details>
+      <details class="reveal">
+        <summary>Preciso entender de apostas?</summary>
+        <div class="body">Não. As entradas vêm prontas e analisadas; você só acompanha no seu ritmo.</div>
+      </details>
+      <details class="reveal">
+        <summary>O Jonathan fala no grupo?</summary>
+        <div class="body">Sim. Ele posta as leituras dele, bastidores e responde a galera quando dá — é o grupo oficial, não uma revenda de conteúdo.</div>
+      </details>
+      <details class="reveal">
+        <summary>Vou receber mensagem o dia todo?</summary>
+        <div class="body">Só o time posta no grupo, então não vira bagunça. E você pode silenciar o grupo no WhatsApp e ler quando quiser.</div>
+      </details>
+      <details class="reveal">
+        <summary>Posso sair depois?</summary>
+        <div class="body">A qualquer momento, com um toque, sem precisar avisar ninguém.</div>
+      </details>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ======================= FOOTER ======================= -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="brand" href="#top">
+        <span class="brand-mark">ZJ</span>
+        <span class="brand-name">Jonathan<em> ZJ</em></span>
+      </a>
+      <span class="age">+18</span>
+    </div>
+
+    <p class="legal">
+      <strong>Conteúdo destinado a maiores de 18 anos. Aposte com responsabilidade.</strong>
+      Apostas são uma forma de entretenimento e envolvem risco — aposte apenas o valor que
+      você está disposto a perder. Odds altas representam maior risco. Resultados passados
+      não garantem resultados futuros. Este conteúdo não promete ganhos ou retornos.
+    </p>
+    <p class="legal" style="margin-top:12px">
+      <strong>Ministério da Fazenda adverte:</strong> Aposta não é investimento.
+    </p>
+    <p class="legal" style="margin-top:12px">
+      Este site não é afiliado, patrocinado ou endossado pelo WhatsApp/Meta, nem por
+      qualquer clube ou entidade esportiva citada.
+    </p>
+
+    <div class="foot-links">
+      <a href="#">Termos de uso</a><span class="sep">·</span>
+      <a href="#">Política de privacidade</a><span class="sep">·</span>
+      <a href="#">Jogo responsável</a><span class="sep">·</span>
+      <span>© <span id="year">2026</span> Jonathan ZJ</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ======================= CTA FIXO MOBILE ======================= -->
+<div class="sticky-cta" id="stickyCta">
+  <a class="btn js-cta" href="#" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.82-9.8 2.62 0 5.08 1.03 6.93 2.88a9.74 9.74 0 0 1 2.87 6.93c0 5.4-4.4 9.8-9.8 9.8M20.5 3.5A11.86 11.86 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.16 1.6 5.98L0 24l6.22-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.94-5.36 11.95-11.95a11.87 11.87 0 0 0-3.5-8.46"/></svg>
+    Entrar no grupo grátis
+  </a>
+</div>
+
+<script>
+/* ---- Link único do grupo: troque aqui e vale para todos os botões ---- */
+var GRUPO_WHATSAPP = "https://chat.whatsapp.com/KEuazYzSAR45R87YI0ytQ5?s=sh&p=i&mlu=4";
+
+document.querySelectorAll('.js-cta').forEach(function (el) {
+  el.setAttribute('href', GRUPO_WHATSAPP);
+  el.setAttribute('target', '_blank');
+  el.addEventListener('click', function () {
+    /* gancho para pixel/analytics — ex.: fbq('track','Lead') ou gtag('event','join_group') */
+    if (window.fbq) { window.fbq('track', 'Lead'); }
+    if (window.gtag) { window.gtag('event', 'join_group', { method: 'whatsapp' }); }
+  });
+});
+
+/* ---- Ano no rodapé ---- */
+document.getElementById('year').textContent = new Date().getFullYear();
+
+/* ---- Reveal on scroll ---- */
+var io = new IntersectionObserver(function (entries) {
+  entries.forEach(function (e) {
+    if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+  });
+}, { threshold: 0.14, rootMargin: '0px 0px -40px' });
+document.querySelectorAll('.reveal').forEach(function (el, i) {
+  el.style.transitionDelay = (i % 4) * 70 + 'ms';
+  io.observe(el);
+});
+
+/* ---- Barra fixa: aparece depois de sair do hero ---- */
+var sticky = document.getElementById('stickyCta');
+var hero = document.querySelector('.hero');
+new IntersectionObserver(function (entries) {
+  sticky.classList.toggle('show', !entries[0].isIntersecting);
+}, { threshold: 0 }).observe(hero);
+</script>
+
+</body>
+</html>
