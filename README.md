@@ -3,6 +3,12 @@
 Squeeze page de uma tela para o grupo gratuito de WhatsApp: hero de tela cheia com a
 foto ao fundo, card de perks, CTA e rodapé legal.
 
+O sistema visual vem da **`gidogreen.com/grupo-gg/`**: fundo verde quase preto
+(`#040C0D`), superfície `#114F2A`, títulos em laranja `#FF9F39`, CTA azul `#1446FF`
+com borda lima `#9FE500` e ícones de círculo laranja com glifo verde `#035128`.
+A tipografia **não** é a deles: uma família só (Archivo), usando o eixo de largura
+variável para os títulos condensados em caixa-alta.
+
 O layout é travado numa **coluna de 480 px** (`--col`), então a página é idêntica no
 celular e no desktop — no desktop ela aparece centralizada, no formato de celular.
 
