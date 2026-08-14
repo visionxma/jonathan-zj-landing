@@ -37,13 +37,13 @@
 
   --font:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
 
-  --max:1080px;
+  --col:480px;
   --r:14px;
 }
 
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 body{
-  background:var(--bg);color:var(--fg);
+  background:hsl(158 40% 4%);color:var(--fg);
   font-family:var(--font);
   font-size:16px;line-height:1.6;overflow-x:hidden;
   -webkit-font-smoothing:antialiased;
@@ -55,7 +55,7 @@ svg{display:block}
 h1,h2,h3{font-weight:800;letter-spacing:-.03em;line-height:1.08}
 .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:20px}
+.wrap{width:100%;margin-inline:auto;padding-inline:20px}
 
 
 /* ================= CTA forte ================= */
@@ -100,6 +100,15 @@ h1,h2,h3{font-weight:800;letter-spacing:-.03em;line-height:1.08}
   *,*::before,*::after{animation:none!important;transition:none!important}
 }
 
+/* ================= coluna (formato celular) ================= */
+.app{
+  position:relative;width:100%;max-width:var(--col);margin-inline:auto;
+  background:var(--bg);min-height:100vh;min-height:100svh;
+}
+@media(min-width:520px){
+  .app{box-shadow:0 0 0 1px var(--border),0 24px 70px hsl(158 40% 2% / .7)}
+}
+
 /* ================= header ================= */
 header{
   position:sticky;top:0;z-index:50;
@@ -114,16 +123,15 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 .logo{font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
 .logo span{color:var(--p1)}
 .head-cta{
-  display:none;background:var(--grad);color:var(--p-fg);
-  font-size:13px;font-weight:700;padding:9px 18px;border-radius:999px;
+  background:var(--grad);color:var(--p-fg);
+  font-size:12.5px;font-weight:700;padding:8px 16px;border-radius:999px;
   box-shadow:0 6px 18px -6px hsl(148 78% 40% / .7);white-space:nowrap;
 }
-@media(min-width:620px){.head-cta{display:inline-block}}
 
 /* ================= hero ================= */
 .hero{
   position:relative;overflow:hidden;background:#000;
-  min-height:calc(100vh - 60px);min-height:calc(100svh - 60px);
+  min-height:100vh;min-height:100svh;
   display:flex;align-items:flex-end;
   margin-top:-60px;padding:60px 0 clamp(28px,4vh,48px);
 }
@@ -137,7 +145,6 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
     var(--bg) 84%, var(--bg) 100%);
 }
 .hero > .wrap{position:relative;z-index:2;width:100%}
-.hero-inner{max-width:520px}
 
 .badge{
   display:inline-flex;align-items:center;gap:8px;
@@ -147,8 +154,8 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 }
 .live{width:7px;height:7px;border-radius:50%;background:var(--p1);animation:ctaBounce 1.6s ease-in-out infinite}
 
-.hero h1{font-size:clamp(31px,5.4vw,46px);margin-bottom:12px}
-.hero .sub{font-size:clamp(15px,1.7vw,17px);color:var(--muted);max-width:44ch}
+.hero h1{font-size:clamp(30px,8vw,38px);margin-bottom:11px}
+.hero .sub{font-size:clamp(14.5px,4vw,16px);color:var(--muted)}
 .hero .sub b{color:var(--fg);font-weight:600}
 
 /* card de benefícios + CTA */
@@ -175,7 +182,6 @@ header .wrap{display:flex;align-items:center;justify-content:space-between;heigh
 
 /* ================= footer ================= */
 footer{border-top:1px solid var(--border);padding:40px 0 100px}
-@media(min-width:760px){footer{padding-bottom:40px}}
 .foot-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
 .age{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
   border:1.5px solid var(--faint);color:var(--muted);font-size:12px;font-weight:700;flex:none}
@@ -187,20 +193,22 @@ footer{border-top:1px solid var(--border);padding:40px 0 100px}
 
 /* ================= sticky ================= */
 .sticky{
-  position:fixed;left:0;right:0;bottom:0;z-index:60;
+  position:fixed;left:50%;bottom:0;z-index:60;
+  width:100%;max-width:var(--col);
   padding:11px 18px calc(11px + env(safe-area-inset-bottom));
   background:hsl(158 42% 6% / .95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
   border-top:1px solid var(--border);
-  transform:translateY(115%);transition:transform .3s ease;
+  transform:translate(-50%,115%);transition:transform .3s ease;
 }
-.sticky.show{transform:none}
+.sticky.show{transform:translate(-50%,0)}
 .sticky .cta-wrap{margin:0}
 .sticky .cta{min-height:52px;font-size:14px}
-@media(min-width:760px){.sticky{display:none}}
 </style>
 </head>
 
 <body>
+
+<div class="app">
 
 <header>
   <div class="wrap">
@@ -299,6 +307,8 @@ footer{border-top:1px solid var(--border);padding:40px 0 100px}
     </div>
   </div>
 </footer>
+
+</div><!-- /.app -->
 
 <div class="sticky" id="sticky">
   <div class="cta-wrap">

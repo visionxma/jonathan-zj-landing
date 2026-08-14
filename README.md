@@ -1,7 +1,10 @@
 # Landing Page — Jonathan ZJ
 
-Landing de captação para o grupo gratuito de WhatsApp, com a mesma estrutura do modelo
-`gidogreen.com/grupo-gg/` (hero → benefícios → prova social → passos → CTA → FAQ → legal).
+Squeeze page de uma tela para o grupo gratuito de WhatsApp: hero de tela cheia com a
+foto ao fundo, card de perks, CTA e rodapé legal.
+
+O layout é travado numa **coluna de 480 px** (`--col`), então a página é idêntica no
+celular e no desktop — no desktop ela aparece centralizada, no formato de celular.
 
 ## Arquivos
 
@@ -45,7 +48,8 @@ python3 -m http.server 8901
 |---|---|
 | **Link do grupo** | `index.html`, no fim do arquivo: `var GRUPO_WHATSAPP = "..."` — vale para todos os 4 botões de uma vez |
 | Cores e fonte | bloco `:root` no `<style>` (`--p1`, `--p2`, `--bg`, `--font`) |
-| Texto de qualquer seção | direto no HTML, tudo em português e comentado por seção |
+| Largura da coluna | `--col` no `:root` |
+| Textos | direto no HTML, tudo em português e comentado |
 | Foto do hero | trocar `hero.png` e regerar (comando acima) |
 
 
