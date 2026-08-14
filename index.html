@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Jonathan ZJ — Grupo oficial</title>
-<meta name="description" content="Entre no grupo do Jonathan ZJ. Entradas analisadas e leitura de jogo de quem passou 15 anos dentro do vestiário. Gratuito.">
-<meta name="theme-color" content="#0B0F0C">
+<meta name="description" content="Entre no grupo do Jonathan ZJ. Entradas analisadas e leitura de jogo de quem viveu o futebol por dentro. Gratuito, sem cadastro.">
+<meta name="theme-color" content="#091712">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_BR">
@@ -16,173 +16,243 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 
 :root{
-  --bg:#0B0F0C;
-  --bg-2:#0F1411;
-  --line:rgba(255,255,255,.09);
-  --text:#F2F4F2;
-  --muted:#95A09A;
-  --faint:#6B756F;
-  --wa:#25D366;
+  --bg:hsl(158 42% 6%);
+  --card:hsl(160 30% 10%);
+  --card-2:hsl(158 26% 13%);
+  --border:hsl(158 22% 19%);
+  --fg:hsl(150 18% 96%);
+  --muted:hsl(150 9% 64%);
+  --faint:hsl(150 8% 48%);
+
+  --p1:hsl(148 80% 50%);
+  --p2:hsl(162 70% 42%);
+  --p-fg:hsl(158 60% 6%);
+  --grad:linear-gradient(135deg,var(--p1),var(--p2));
+
   --max:1080px;
+  --r:14px;
 }
 
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
 body{
-  background:var(--bg);color:var(--text);
-  font-family:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
-  font-size:16.5px;line-height:1.6;font-weight:400;
-  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+  background:var(--bg);color:var(--fg);
+  font-family:'Inter',system-ui,-apple-system,sans-serif;
+  font-size:16px;line-height:1.6;overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
 }
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
+svg{display:block}
 
-h1,h2,h3{font-weight:700;letter-spacing:-.028em;line-height:1.06}
+h1,h2,h3,.display{font-family:'Space Grotesk','Inter',sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.1}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:24px}
-.section{padding:clamp(56px,8vw,96px) 0}
-.rule{border-top:1px solid var(--line)}
+.wrap{width:100%;max-width:var(--max);margin-inline:auto;padding-inline:20px}
+.section{padding:clamp(56px,8vw,92px) 0}
+.narrow{max-width:640px;margin-inline:auto}
 
 .label{
-  font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
-  color:var(--faint);
+  display:inline-block;font-size:11px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--p1);
 }
 
-/* ---------- botão ---------- */
-.btn{
-  display:inline-flex;align-items:center;justify-content:center;gap:10px;
-  background:var(--wa);color:#07120B;
-  font-size:15.5px;font-weight:600;letter-spacing:-.01em;
-  padding:15px 30px;border:none;border-radius:6px;cursor:pointer;
-  transition:background .18s;
+/* ================= CTA forte ================= */
+.cta-wrap{position:relative;margin-top:20px}
+.cta-wrap::after{
+  content:"";position:absolute;inset:0;border-radius:999px;pointer-events:none;
+  border:2px solid hsl(148 80% 50% / .55);
+  animation:ctaPulse 2.1s ease-out infinite;
 }
-.btn:hover{background:#1FBA5A}
-.btn svg{width:19px;height:19px;flex:none}
-.btn-note{display:block;font-size:13.5px;color:var(--faint);margin-top:14px}
+.cta{
+  position:relative;overflow:hidden;isolation:isolate;
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;min-height:60px;padding:0 26px;
+  border:none;border-radius:999px;cursor:pointer;
+  background:var(--grad);color:var(--p-fg);
+  font-family:'Space Grotesk','Inter',sans-serif;
+  font-size:15px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;
+  box-shadow:0 12px 34px -10px hsl(148 78% 40% / .75),
+             inset 0 1px 0 hsl(0 0% 100% / .22);
+  animation:ctaBounce 2.6s ease-in-out infinite;
+  transition:filter .18s,transform .12s;
+}
+.cta:hover{filter:brightness(1.07)}
+.cta:active{transform:scale(.985)}
+.cta::before{
+  content:"";position:absolute;top:0;bottom:0;left:0;width:130px;z-index:-1;
+  background:linear-gradient(90deg,transparent,hsl(0 0% 100% / .3),transparent);
+  animation:ctaShimmer 2.6s linear infinite;
+}
+.cta .arrow{width:17px;height:17px;animation:arrowNudge 1.4s ease-in-out infinite}
+.cta-note{display:block;text-align:center;font-size:12.5px;color:var(--faint);margin-top:12px}
 
-/* ---------- header ---------- */
+@keyframes ctaShimmer{0%{transform:translateX(-100%)}100%{transform:translateX(560%)}}
+@keyframes ctaPulse{0%{transform:scale(1);opacity:.6}70%{transform:scale(1.07);opacity:0}100%{opacity:0}}
+@keyframes ctaBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
+@keyframes arrowNudge{0%,100%{transform:translateX(0);opacity:.8}50%{transform:translateX(4px);opacity:1}}
+@keyframes slideUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.anim{animation:slideUp .5s cubic-bezier(.22,1,.36,1) both}
+.anim-2{animation-delay:.08s}
+.anim-3{animation-delay:.16s}
+
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+/* ================= header ================= */
 header{
   position:sticky;top:0;z-index:50;
   background:transparent;border-bottom:1px solid transparent;
   transition:background .25s,border-color .25s;
 }
 header.scrolled{
-  background:rgba(11,15,12,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-bottom-color:var(--line);
+  background:hsl(158 42% 6% / .88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-bottom-color:var(--border);
 }
 header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px}
-.logo{font-size:15px;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
-.logo span{color:var(--faint);font-weight:500}
-.header-link{font-size:14px;font-weight:500;color:var(--muted);transition:color .18s}
-.header-link:hover{color:var(--text)}
+.logo{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.logo span{color:var(--p1)}
+.head-cta{
+  display:none;background:var(--grad);color:var(--p-fg);
+  font-size:13px;font-weight:700;padding:9px 18px;border-radius:999px;
+  box-shadow:0 6px 18px -6px hsl(148 78% 40% / .7);white-space:nowrap;
+}
+@media(min-width:620px){.head-cta{display:inline-block}}
 
-/* ---------- hero ---------- */
+/* ================= hero ================= */
 .hero{
   position:relative;overflow:hidden;background:#000;
-  min-height:calc(100vh - 60px);
-  min-height:calc(100svh - 60px);
+  min-height:calc(100vh - 60px);min-height:calc(100svh - 60px);
   display:flex;align-items:flex-end;
-  padding-bottom:clamp(40px,6vh,68px);
-  margin-top:-60px;padding-top:60px;
+  margin-top:-60px;padding:60px 0 clamp(28px,4vh,48px);
 }
 .hero-bg{position:absolute;inset:0;z-index:0}
 .hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center top}
 .hero::after{
   content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
   background:linear-gradient(180deg,
-    rgba(0,0,0,.55) 0%,
-    rgba(0,0,0,.10) 20%,
-    rgba(0,0,0,.45) 52%,
-    rgba(0,0,0,.88) 76%,
-    #000 90%,
-    var(--bg) 100%);
+    hsl(158 42% 4% / .6) 0%, hsl(158 42% 4% / .1) 18%,
+    hsl(158 42% 4% / .5) 46%, hsl(158 42% 5% / .9) 68%,
+    var(--bg) 84%, var(--bg) 100%);
 }
 .hero > .wrap{position:relative;z-index:2;width:100%}
+.hero-inner{max-width:520px}
 
-.hero h1{font-size:clamp(38px,6.2vw,60px);margin:18px 0 20px;max-width:15ch}
-.hero p{font-size:clamp(16.5px,1.9vw,18.5px);color:#B9C2BC;max-width:44ch}
-.hero .cta{margin-top:32px}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  border:1px solid hsl(148 60% 40% / .4);background:hsl(148 60% 30% / .16);
+  border-radius:999px;padding:6px 13px;margin-bottom:16px;
+  font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--p1);
+}
+.live{width:7px;height:7px;border-radius:50%;background:var(--p1);animation:ctaBounce 1.6s ease-in-out infinite}
 
-.figure{position:relative;overflow:hidden;border-radius:8px;background:var(--bg-2);border:1px solid var(--line)}
-.figure img{width:100%;height:100%;object-fit:cover}
+.hero h1{font-size:clamp(31px,5.4vw,46px);margin-bottom:12px}
+.hero .sub{font-size:clamp(15px,1.7vw,17px);color:var(--muted);max-width:44ch}
+.hero .sub b{color:var(--fg);font-weight:600}
 
-/* ---------- números ---------- */
-.facts{display:flex;flex-wrap:wrap;gap:36px;padding:26px 0}
-.fact b{display:block;font-size:26px;font-weight:700;letter-spacing:-.03em;line-height:1.15}
-.fact span{font-size:12.5px;color:var(--faint);letter-spacing:.02em}
+/* card de benefícios + CTA */
+.offer{
+  margin-top:22px;padding:18px;border-radius:18px;
+  border:1px solid var(--border);background:hsl(160 30% 10% / .82);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 20px 50px -20px hsl(158 40% 2% / .9);
+}
+.perks{display:grid;gap:8px}
+.perk{
+  display:flex;align-items:center;gap:11px;
+  border:1px solid var(--border);background:hsl(158 26% 13% / .6);
+  border-radius:10px;padding:10px 13px;
+  font-size:13.5px;font-weight:500;
+}
+.perk svg{width:16px;height:16px;flex:none;color:var(--p1);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* ---------- lista numerada ---------- */
-.items{display:grid;gap:0;grid-template-columns:1fr;margin-top:8px}
-@media(min-width:820px){.items{grid-template-columns:repeat(3,1fr);gap:44px}}
-.item{padding:26px 0;border-top:1px solid var(--line)}
-@media(min-width:820px){.item{padding:26px 0 0}}
-.item .n{font-size:12px;font-weight:600;color:var(--faint);letter-spacing:.08em;display:block;margin-bottom:12px}
-.item h3{font-size:19px;margin-bottom:8px;letter-spacing:-.02em}
-.item p{font-size:15.5px;color:var(--muted);line-height:1.55}
+.proof{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:16px;font-size:12px;color:var(--faint);
+}
+.proof .live{width:6px;height:6px}
 
-/* ---------- credencial ---------- */
-.about{background:var(--bg-2);border-block:1px solid var(--line)}
-.about-grid{display:grid;gap:clamp(28px,4vw,56px);grid-template-columns:1fr;align-items:center}
+/* ================= cards genéricos ================= */
+.card{border:1px solid var(--border);background:var(--card);border-radius:var(--r);padding:22px}
+
+.items{display:grid;gap:12px;grid-template-columns:1fr;margin-top:26px}
+@media(min-width:800px){.items{grid-template-columns:repeat(3,1fr)}}
+.item .n{
+  display:inline-grid;place-items:center;width:34px;height:34px;border-radius:9px;
+  background:hsl(148 60% 30% / .18);border:1px solid hsl(148 60% 40% / .3);
+  color:var(--p1);font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;
+  margin-bottom:14px;
+}
+.item h3{font-size:18px;margin-bottom:7px}
+.item p{font-size:14.5px;color:var(--muted);line-height:1.55}
+
+/* ================= credencial ================= */
+.about{border-block:1px solid var(--border);background:hsl(160 30% 8%)}
+.about-grid{display:grid;gap:clamp(26px,4vw,52px);grid-template-columns:1fr;align-items:center}
 @media(min-width:820px){.about-grid{grid-template-columns:.9fr 1.1fr}}
-.about .figure{aspect-ratio:4/3}
-.about h2{font-size:clamp(26px,3.6vw,34px);margin:16px 0 16px}
-.about p{color:var(--muted);font-size:16.5px;max-width:52ch}
-.about p + p{margin-top:14px}
+.figure{position:relative;overflow:hidden;border-radius:var(--r);border:1px solid var(--border);background:var(--card);aspect-ratio:4/3}
+.figure img{width:100%;height:100%;object-fit:cover}
+.about h2{font-size:clamp(25px,3.4vw,33px);margin:14px 0 14px}
+.about p{color:var(--muted);font-size:16px;max-width:52ch}
+.about p + p{margin-top:12px}
+.facts{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.fact{border:1px solid var(--border);background:var(--card);border-radius:11px;padding:11px 16px}
+.fact b{display:block;font-family:'Space Grotesk',sans-serif;font-size:22px;line-height:1.2;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fact span{font-size:11.5px;color:var(--faint)}
 
-/* ---------- cta ---------- */
-.cta-block{text-align:center}
-.cta-block h2{font-size:clamp(30px,5vw,46px);margin-bottom:16px}
-.cta-block p{color:var(--muted);margin-bottom:32px}
+/* ================= cta final ================= */
+.final{text-align:center;background:
+  radial-gradient(620px 300px at 50% 0%,hsl(148 70% 30% / .18),transparent 70%)}
+.final h2{font-size:clamp(28px,4.6vw,42px);margin-bottom:14px}
+.final p{color:var(--muted);margin-bottom:6px}
+.final .cta-wrap{max-width:420px;margin-inline:auto}
 
-/* ---------- faq ---------- */
-.faq{max-width:720px}
-details{border-top:1px solid var(--line)}
-details:last-of-type{border-bottom:1px solid var(--line)}
+/* ================= faq ================= */
+.faq{max-width:700px;margin:26px auto 0;display:grid;gap:10px}
+details{border:1px solid var(--border);background:var(--card);border-radius:12px;overflow:hidden}
+details[open]{border-color:hsl(148 50% 35% / .45)}
 summary{
-  list-style:none;cursor:pointer;padding:20px 40px 20px 0;position:relative;
-  font-size:16.5px;font-weight:600;letter-spacing:-.015em;
+  list-style:none;cursor:pointer;padding:17px 46px 17px 18px;position:relative;
+  font-family:'Space Grotesk',sans-serif;font-size:15.5px;font-weight:600;
 }
 summary::-webkit-details-marker{display:none}
 summary::after{
-  content:"";position:absolute;right:6px;top:50%;width:9px;height:9px;
-  border-right:1.5px solid var(--faint);border-bottom:1.5px solid var(--faint);
+  content:"";position:absolute;right:18px;top:50%;width:8px;height:8px;
+  border-right:2px solid var(--p1);border-bottom:2px solid var(--p1);
   transform:translateY(-70%) rotate(45deg);transition:transform .2s;
 }
 details[open] summary::after{transform:translateY(-20%) rotate(225deg)}
-details p{padding:0 0 22px;color:var(--muted);font-size:15.5px;max-width:62ch}
+details p{padding:0 18px 18px;color:var(--muted);font-size:14.5px}
 
-/* ---------- footer ---------- */
-footer{border-top:1px solid var(--line);padding:44px 0 100px}
-@media(min-width:760px){footer{padding-bottom:44px}}
-.foot-head{display:flex;align-items:center;gap:14px;margin-bottom:22px}
-.age{
-  display:grid;place-items:center;width:38px;height:38px;border-radius:50%;
-  border:1.5px solid var(--faint);color:var(--muted);
-  font-size:12.5px;font-weight:700;flex:none;
-}
-.legal{color:var(--faint);font-size:13px;line-height:1.7;max-width:76ch}
-.legal + .legal{margin-top:10px}
-.foot-links{
-  margin-top:26px;padding-top:22px;border-top:1px solid var(--line);
-  display:flex;flex-wrap:wrap;gap:8px 20px;font-size:13px;color:var(--faint);
-}
+/* ================= footer ================= */
+footer{border-top:1px solid var(--border);padding:40px 0 100px}
+@media(min-width:760px){footer{padding-bottom:40px}}
+.foot-head{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.age{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;
+  border:1.5px solid var(--faint);color:var(--muted);font-size:12px;font-weight:700;flex:none}
+.legal{color:var(--faint);font-size:12.5px;line-height:1.7;max-width:76ch}
+.legal + .legal{margin-top:9px}
+.foot-links{margin-top:24px;padding-top:20px;border-top:1px solid var(--border);
+  display:flex;flex-wrap:wrap;gap:8px 18px;font-size:12.5px;color:var(--faint)}
 .foot-links a:hover{color:var(--muted)}
 
-/* ---------- cta fixo mobile ---------- */
+/* ================= sticky ================= */
 .sticky{
   position:fixed;left:0;right:0;bottom:0;z-index:60;
-  padding:12px 20px calc(12px + env(safe-area-inset-bottom));
-  background:rgba(11,15,12,.94);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border-top:1px solid var(--line);
-  transform:translateY(110%);transition:transform .3s ease;
+  padding:11px 18px calc(11px + env(safe-area-inset-bottom));
+  background:hsl(158 42% 6% / .95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border-top:1px solid var(--border);
+  transform:translateY(115%);transition:transform .3s ease;
 }
 .sticky.show{transform:none}
-.sticky .btn{width:100%}
+.sticky .cta-wrap{margin:0}
+.sticky .cta{min-height:52px;font-size:14px}
 @media(min-width:760px){.sticky{display:none}}
 </style>
 </head>
@@ -192,13 +262,13 @@ footer{border-top:1px solid var(--line);padding:44px 0 100px}
 <header>
   <div class="wrap">
     <a class="logo" href="#top">Jonathan <span>ZJ</span></a>
-    <a class="header-link js-cta" href="#">Entrar no grupo →</a>
+    <a class="head-cta js-cta" href="#">Entrar no grupo</a>
   </div>
 </header>
 
 <main id="top">
 
-  <!-- ============ HERO ============ -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
     <picture class="hero-bg">
       <source type="image/webp"
@@ -212,49 +282,77 @@ footer{border-top:1px solid var(--line);padding:44px 0 100px}
     </picture>
 
     <div class="wrap">
-      <div>
-        <span class="label">Grupo oficial · Gratuito</span>
-        <h1>Entre no grupo do Jonathan ZJ</h1>
-        <p>
-          Entradas analisadas e leitura de jogo de quem passou quinze anos
-          dentro do vestiário — no Brasil, na Ucrânia e no Catar.
+      <div class="hero-inner">
+        <span class="badge anim"><span class="live"></span> Grupo oficial · Gratuito</span>
+
+        <h1 class="anim">
+          Entre no grupo do <span class="grad-text">Jonathan ZJ</span>
+        </h1>
+
+        <p class="sub anim anim-2">
+          Entradas analisadas pra copiar e acompanhar.
+          <b>Leitura de quem passou 15 anos dentro do vestiário.</b>
         </p>
-        <div class="cta">
-          <a class="btn js-cta" href="#">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.82-9.8 2.62 0 5.08 1.03 6.93 2.88a9.74 9.74 0 0 1 2.87 6.93c0 5.4-4.4 9.8-9.8 9.8M20.5 3.5A11.86 11.86 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.16 1.6 5.98L0 24l6.22-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.94-5.36 11.95-11.95a11.87 11.87 0 0 0-3.5-8.46"/></svg>
-            Entrar no grupo
-          </a>
-          <span class="btn-note">Gratuito. Sem cadastro, sem depósito.</span>
+
+        <div class="offer anim anim-3">
+          <div class="perks">
+            <div class="perk">
+              <svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+              <span>Entradas analisadas todos os dias</span>
+            </div>
+            <div class="perk">
+              <svg viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.07-2.14-.22-4.05 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.15.43-2.29 1-3a2.5 2.5 0 0 0 2.5 2.5Z"/></svg>
+              <span>Bastidores de quem jogou profissionalmente</span>
+            </div>
+            <div class="perk">
+              <svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></svg>
+              <span>Sem cadastro, sem depósito, sem pegadinha</span>
+            </div>
+          </div>
+
+          <div class="cta-wrap">
+            <a class="cta js-cta" href="#">
+              <span>Quero entrar no grupo</span>
+              <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+          </div>
+          <span class="cta-note">Entrada gratuita · leva menos de um minuto</span>
+
+          <div class="proof">
+            <span class="live"></span>
+            <!-- TROQUE por um número real de membros quando tiver -->
+            <span>Grupo aberto agora, com a torcida acompanhando ao vivo</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ O QUE TEM ============ -->
-  <section class="section rule">
+  <!-- ================= O QUE TEM ================= -->
+  <section class="section">
     <div class="wrap">
       <span class="label">No grupo</span>
       <div class="items">
-        <article class="item">
+        <article class="item card">
           <span class="n">01</span>
           <h3>Entradas analisadas</h3>
-          <p>As leituras do dia com o motivo por trás de cada escolha, não só o palpite.</p>
+          <p>As leituras do dia com o motivo por trás de cada escolha, não só o palpite solto.</p>
         </article>
-        <article class="item">
+        <article class="item card">
           <span class="n">02</span>
           <h3>Bastidores</h3>
           <p>O que acontece antes do jogo, contado por quem esteve dentro do vestiário.</p>
         </article>
-        <article class="item">
+        <article class="item card">
           <span class="n">03</span>
           <h3>Comunidade</h3>
-          <p>A torcida acompanhando cada partida junto, em tempo real.</p>
+          <p>A torcida acompanhando cada partida junto, em tempo real, o dia inteiro.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <!-- ============ CREDENCIAL ============ -->
+  <!-- ================= CREDENCIAL ================= -->
   <section class="section about">
     <div class="wrap about-grid">
       <figure class="figure">
@@ -263,15 +361,13 @@ footer{border-top:1px solid var(--line);padding:44px 0 100px}
       </figure>
       <div>
         <span class="label">Quem assina</span>
-        <h2>A leitura vem de dentro de campo.</h2>
+        <h2>A leitura vem de <span class="grad-text">dentro de campo</span>.</h2>
         <p>
           Jonathan jogou no Internacional e no Criciúma, passou pelo futebol ucraniano
           no FC Lviv e no Metalist e encerrou ciclo no Catar. Quinze anos estudando
           adversário na véspera de jogo.
         </p>
-        <p>
-          É essa leitura que ele divide no grupo — de graça, todo dia.
-        </p>
+        <p>É essa leitura que ele divide no grupo — de graça, todo dia.</p>
         <div class="facts">
           <div class="fact"><b>15</b><span>anos de carreira</span></div>
           <div class="fact"><b>3</b><span>países</span></div>
@@ -281,23 +377,26 @@ footer{border-top:1px solid var(--line);padding:44px 0 100px}
     </div>
   </section>
 
-  <!-- ============ CTA ============ -->
-  <section class="section">
-    <div class="wrap cta-block">
-      <h2>A entrada leva menos de um minuto.</h2>
-      <p>Você cai direto no grupo do WhatsApp. Sem formulário.</p>
-      <a class="btn js-cta" href="#">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.82-9.8 2.62 0 5.08 1.03 6.93 2.88a9.74 9.74 0 0 1 2.87 6.93c0 5.4-4.4 9.8-9.8 9.8M20.5 3.5A11.86 11.86 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.16 1.6 5.98L0 24l6.22-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.94-5.36 11.95-11.95a11.87 11.87 0 0 0-3.5-8.46"/></svg>
-        Entrar no grupo
-      </a>
+  <!-- ================= CTA FINAL ================= -->
+  <section class="section final">
+    <div class="wrap narrow">
+      <h2>A vaga é sua. <span class="grad-text">Bora?</span></h2>
+      <p>Você cai direto no grupo do WhatsApp. Sem formulário, sem custo.</p>
+      <div class="cta-wrap">
+        <a class="cta js-cta" href="#">
+          <span>Entrar no grupo grátis</span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+      </div>
+      <span class="cta-note">Maiores de 18 anos. Aposte com responsabilidade.</span>
     </div>
   </section>
 
-  <!-- ============ FAQ ============ -->
-  <section class="section rule">
+  <!-- ================= FAQ ================= -->
+  <section class="section" style="padding-top:0">
     <div class="wrap">
-      <span class="label">Dúvidas</span>
-      <div class="faq" style="margin-top:24px">
+      <div class="narrow" style="text-align:center"><span class="label">Dúvidas</span></div>
+      <div class="faq">
         <details>
           <summary>É pago?</summary>
           <p>Não. Entrar no grupo é gratuito. As apostas você faz por conta, com o valor que estiver disposto a perder.</p>
@@ -347,10 +446,12 @@ footer{border-top:1px solid var(--line);padding:44px 0 100px}
 </footer>
 
 <div class="sticky" id="sticky">
-  <a class="btn js-cta" href="#">
-    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.78-1.47-1.75-1.65-2.05-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.6-.92-2.2-.24-.58-.48-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.01-1.04 2.47s1.07 2.86 1.22 3.06c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.8h-.02a9.8 9.8 0 0 1-4.99-1.37l-.36-.21-3.71.97.99-3.62-.23-.37a9.79 9.79 0 0 1-1.5-5.22c0-5.4 4.4-9.8 9.82-9.8 2.62 0 5.08 1.03 6.93 2.88a9.74 9.74 0 0 1 2.87 6.93c0 5.4-4.4 9.8-9.8 9.8M20.5 3.5A11.86 11.86 0 0 0 12.05 0C5.46 0 .1 5.36.1 11.95c0 2.1.55 4.16 1.6 5.98L0 24l6.22-1.63a11.9 11.9 0 0 0 5.83 1.49h.01c6.58 0 11.94-5.36 11.95-11.95a11.87 11.87 0 0 0-3.5-8.46"/></svg>
-    Entrar no grupo
-  </a>
+  <div class="cta-wrap">
+    <a class="cta js-cta" href="#">
+      <span>Entrar no grupo grátis</span>
+      <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+    </a>
+  </div>
 </div>
 
 <script>
@@ -369,7 +470,6 @@ document.querySelectorAll('.js-cta').forEach(function (el) {
 
 document.getElementById('year').textContent = new Date().getFullYear();
 
-/* Header ganha fundo depois que sai do topo */
 var head = document.querySelector('header');
 var onScroll = function () { head.classList.toggle('scrolled', window.scrollY > 40); };
 addEventListener('scroll', onScroll, { passive: true });
