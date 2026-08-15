@@ -30,8 +30,7 @@ começar é simples → bora pra dentro? → FAQ → barra legal.
 ```
 
 O hero é servido em `hero-800/1400/2000` (`.webp` com `.jpg` de fallback), gerados a
-partir do `hero.jpg` original — que fica de fora do repositório via `.gitignore`,
-mas continua na sua pasta local. Para regerar depois de trocar a foto:
+partir do `assets/img/hero.jpg`. Para regerar depois de trocar a foto:
 
 ```bash
 cd assets/img
@@ -42,7 +41,8 @@ for w in 800 1400 2000; do
 done
 ```
 
-As 14 fotos originais continuam na pasta do projeto, caso queira trocar o hero.
+As 14 fotos originais estão em `_originais/`. Nada da página aponta pra lá — é só
+backup, pra fonte não existir só numa máquina.
 
 Não há build, dependência nem framework. É só subir esta pasta em qualquer
 hospedagem estática (GitHub Pages, Hostinger, Vercel, Netlify, cPanel, S3…).
