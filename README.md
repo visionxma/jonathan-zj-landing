@@ -1,7 +1,7 @@
-# Landing Page — Jonathan ZJ
+# Landing Page — Jonatan
 
 Clone da estrutura da **`gidogreen.com/grupo-gg/`**, com a copy e as fotos adaptadas
-para o Jonathan. Os valores de cor, tipografia, espaçamento e raio foram extraídos do
+para o Jonatan. Os valores de cor, tipografia, espaçamento e raio foram extraídos do
 `post-816.css` da própria página deles, usando os overrides do breakpoint mobile
 (`max-width:767px`) — que é o que se aplica na coluna de 480px.
 
@@ -113,7 +113,7 @@ No GTM, crie um acionador **Evento personalizado** com nome `join_group`.
 
 - **Números do hero** (`+15 anos`, `04 países`, `30`) e a bio dos clubes foram escritos a
   partir das fotos (Internacional, Criciúma, FC Lviv, Metalist, Catar). Confirme com o
-  Jonathan antes de publicar.
+  Jonatan antes de publicar.
 - **Links do rodapé** (Termos, Privacidade, Jogo responsável) estão como `#`.
 - Não há formulário de captura de e-mail/telefone: o botão leva direto pro WhatsApp.
   O modelo tem um modal antes do redirect — dá pra adicionar se quiser gerar lista.
