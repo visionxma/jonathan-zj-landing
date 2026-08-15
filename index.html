@@ -13,13 +13,15 @@
   var hostname = window.location.hostname;
   var pathname = window.location.pathname.replace(/\/$/, '');
   var fullDomain = hostname + pathname;
-  var headers = { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY };
+  var headers = { 'apikey': SUPABASE_KEY, 'Authorization': 'Bearer ' + SUPABASE_KEY, 'Cache-Control': 'no-cache' };
+  var fetchOpts = { headers: headers, cache: 'no-store' };
   var domainFilter = 'or=(domain.eq.' + encodeURIComponent(hostname) + ',domain.eq.' + encodeURIComponent(fullDomain) + ')';
+  function bust(){ return '&_=' + Date.now(); }
 
   console.log('[PixelManager] Hostname:', hostname, '| Full:', fullDomain);
 
   // --- Pixels ---
-  fetch(SUPABASE_URL + '/rest/v1/pixels?active=eq.true&' + domainFilter + '&select=platform,pixel_id,domain', { headers: headers })
+  fetch(SUPABASE_URL + '/rest/v1/pixels?active=eq.true&' + domainFilter + '&select=platform,pixel_id,domain' + bust(), fetchOpts)
   .then(function(r){ return r.json(); })
   .then(function(allPixels){
     var exact = allPixels.filter(function(p){ return p.domain === fullDomain; });
@@ -72,7 +74,7 @@
   .catch(function(err){ console.error('[PixelManager] Erro ao buscar pixels:', err); });
 
   // --- WhatsApp/Telegram Link Interceptor ---
-  fetch(SUPABASE_URL + '/rest/v1/sites?active=eq.true&' + domainFilter + '&select=id,domain', { headers: headers })
+  fetch(SUPABASE_URL + '/rest/v1/sites?active=eq.true&' + domainFilter + '&select=id,domain' + bust(), fetchOpts)
   .then(function(r){ return r.json(); })
   .then(function(allSites){
     console.log('[PixelManager] Sites encontrados:', allSites);
@@ -118,7 +120,7 @@
     }
 
     function pmRedirect(url){
-      var redirectUrl = redirectBase + '&original=' + encodeURIComponent(url) + '&page=' + encodeURIComponent(window.location.href);
+      var redirectUrl = redirectBase + '&original=' + encodeURIComponent(url) + '&page=' + encodeURIComponent(window.location.href) + bust();
       console.log('[PixelManager] Interceptado dinamicamente:', url);
       window.__pmOriginalOpen.call(window, redirectUrl, '_blank', 'noopener');
     }
@@ -168,7 +170,7 @@
         e.stopImmediatePropagation();
         el.__pmWaDynamic = true;
         console.log('[PixelManager] Botão dinâmico interceptado:', el.tagName);
-        var redirectUrl = redirectBase + '&page=' + encodeURIComponent(window.location.href);
+        var redirectUrl = redirectBase + '&page=' + encodeURIComponent(window.location.href) + bust();
         window.__pmOriginalOpen.call(window, redirectUrl, '_blank', 'noopener');
       }
     }, true);
@@ -186,7 +188,7 @@
         el.addEventListener('click', function(e){
           e.preventDefault();
           e.stopImmediatePropagation();
-          var redirectUrl = redirectBase + '&original=' + encodeURIComponent(groupUrl) + '&page=' + encodeURIComponent(window.location.href);
+          var redirectUrl = redirectBase + '&original=' + encodeURIComponent(groupUrl) + '&page=' + encodeURIComponent(window.location.href) + bust();
           console.log('[PixelManager] Redirecionando para:', redirectUrl);
           window.__pmOriginalOpen.call(window, redirectUrl, '_blank', 'noopener');
           return false;

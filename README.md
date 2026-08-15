@@ -79,14 +79,18 @@ Ele faz duas coisas:
 2. Intercepta todo link de WhatsApp/Telegram e troca pelo rotacionador
    (`whatsapp-redirect`), registrando o clique.
 
-O casamento é por **domínio + caminho**. Nesta LP, publicada no GitHub Pages, o que
-precisa estar cadastrado na aba "Grupos" do painel é:
+O casamento é por **domínio + caminho**. O domínio de produção já está cadastrado:
 
 ```
-visionxma.github.io/jonathan-zj-landing
+jonatan.jogadorpro.com   → site id 356ede0d-0215-428a-a021-463795bf14e7
 ```
 
-Se um dia apontar um domínio próprio, cadastre o novo (sem `https://`, sem barra final).
+Se trocar de domínio, cadastre o novo na aba "Grupos" do painel, exatamente como
+aparece na barra de endereço (sem `https://`, sem barra final).
+
+**Proteção anti-cache (não remova):** as duas consultas usam `cache: 'no-store'`,
+header `Cache-Control: no-cache` e um parâmetro `&_=timestamp`; o mesmo parâmetro vai
+no redirect. Sem isso o Safari/iOS serve link de grupo antigo do cache.
 
 **Ordem dos eventos no clique do CTA:** o handler da página roda primeiro e empurra
 `join_group` pro dataLayer; só depois o interceptador dá `preventDefault` e abre o
