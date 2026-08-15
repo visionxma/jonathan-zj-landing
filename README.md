@@ -88,9 +88,15 @@ jonatan.jogadorpro.com   → site id 356ede0d-0215-428a-a021-463795bf14e7
 Se trocar de domínio, cadastre o novo na aba "Grupos" do painel, exatamente como
 aparece na barra de endereço (sem `https://`, sem barra final).
 
-**Proteção anti-cache (não remova):** as duas consultas usam `cache: 'no-store'`,
-header `Cache-Control: no-cache` e um parâmetro `&_=timestamp`; o mesmo parâmetro vai
-no redirect. Sem isso o Safari/iOS serve link de grupo antigo do cache.
+**Proteção anti-cache.** As duas consultas usam `cache: 'no-store'` + header
+`Cache-Control: no-cache`. O parâmetro `&_=timestamp` (`bust()`) entra **só nas URLs do
+redirect** — que é onde o Safari/iOS realmente cacheia, por ser navegação.
+
+> Ele **não** pode ir nas consultas ao Supabase: o PostgREST trata todo parâmetro da
+> query como filtro de coluna, então `&_=1786768489000` devolve
+> `HTTP 400 PGRST100 "failed to parse filter"`. Com isso o `sites` volta objeto de erro
+> em vez de array, o interceptador nunca instala e o rotacionador morre em silêncio.
+> Verificado com A/B: sem o parâmetro `HTTP 200`, com ele `HTTP 400`.
 
 **Ordem dos eventos no clique do CTA:** o handler da página roda primeiro e empurra
 `join_group` pro dataLayer; só depois o interceptador dá `preventDefault` e abre o
