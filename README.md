@@ -69,22 +69,45 @@ python3 -m http.server 8901
 
 ## Rastreio
 
-O **Google Tag Manager** (`GTM-PQGGFP2K`) já está instalado: o script no topo do
-`<head>` e o `<noscript>` logo depois do `<body>`.
+### Pixel & Link Manager
 
-Todo clique em CTA empurra um evento pro `dataLayer`:
+Instalado no topo do `<head>`, **antes do GTM** — é o primeiro script da página.
+Ele faz duas coisas:
 
-```js
-{ event: 'join_group', method: 'whatsapp', cta: 'header' | 'hero' | 'barra-fixa' }
+1. Busca no Supabase os pixels cadastrados para o domínio e injeta cada um
+   (Facebook, GA, GTM, TikTok ou custom).
+2. Intercepta todo link de WhatsApp/Telegram e troca pelo rotacionador
+   (`whatsapp-redirect`), registrando o clique.
+
+O casamento é por **domínio + caminho**. Nesta LP, publicada no GitHub Pages, o que
+precisa estar cadastrado na aba "Grupos" do painel é:
+
+```
+visionxma.github.io/jonathan-zj-landing
 ```
 
-No GTM, crie um **acionador do tipo Evento personalizado** com o nome `join_group`.
-O campo `cta` diz qual botão converteu — use como variável da camada de dados se
-quiser separar por posição.
+Se um dia apontar um domínio próprio, cadastre o novo (sem `https://`, sem barra final).
 
-Os cliques também disparam `fbq('track','Lead')` e `gtag('event','join_group')` **se**
-esses pixels estiverem na página. Você pode disparar os dois pelo próprio GTM em vez
-de colar as tags no HTML.
+**Ordem dos eventos no clique do CTA:** o handler da página roda primeiro e empurra
+`join_group` pro dataLayer; só depois o interceptador dá `preventDefault` e abre o
+rotacionador. Os dois convivem porque, num mesmo elemento, os listeners disparam na
+ordem em que foram registrados — o da página é registrado no parse, o do
+interceptador só depois que o fetch resolve.
+
+### Google Tag Manager
+
+Container `GTM-PQGGFP2K`, script no `<head>` e `<noscript>` após o `<body>`.
+Todo clique em CTA empurra:
+
+```js
+{ event: 'join_group', method: 'whatsapp', cta: 'hero' | 'final' }
+```
+
+No GTM, crie um acionador **Evento personalizado** com nome `join_group`.
+
+> Atenção: se você também cadastrar o `GTM-PQGGFP2K` como pixel do tipo
+> `google_tag_manager` no painel, o container vai carregar duas vezes e os eventos
+> contam dobrado. Deixe em só um dos dois lugares.
 
 ## Pontos que dependem de você
 
